@@ -15,7 +15,7 @@ const LogoLetter = ({ src, alt, className, imageClassName, priority = false }: L
         src={src}
         alt={alt}
         fill
-        className={`object-contain ${imageClassName ?? ""}`}
+        className={`object-contain ${imageClassName ?? "hover:brightness-115"}`}
         priority={priority}
       />
     </div>

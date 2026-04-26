@@ -21,10 +21,8 @@ const LogoKatana = ({ className }: LogoKatanaProps) => {
           src="/zenzakan/logo/katana-o.webp"
           alt="Katana gezogen"
           fill
-          className={`object-contain transition-transform duration-500 ease-out ${
-            hovered
-              ? "-translate-y-[8%] translate-x-[1.5%]"
-              : "translate-y-[1.8%] -translate-x-[2.1%]"
+          className={`object-contain transition-transform duration-2000 ease-out ${
+            hovered ? "-translate-y-[9%] translate-x-[17%]" : "translate-y-[1.8%] translate-x-[11%]"
           }`}
         />
         <Image

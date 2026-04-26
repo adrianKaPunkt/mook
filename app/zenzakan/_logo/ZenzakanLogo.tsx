@@ -1,68 +1,90 @@
+"use client";
+
+import { useEffect } from "react";
 import Image from "next/image";
+import gsap from "gsap";
 import LogoRing from "./LogoRing";
 import LogoLetter from "./LogoLetter";
 import LogoSubText from "./LogoSubText";
 import LogoKatana from "./LogoKatana";
 
 const ZenzakanLogo = () => {
+  useEffect(() => {
+    gsap.set(".logo-letter", {
+      opacity: 0,
+      y: 30,
+      scale: 0.9,
+    });
+
+    gsap.to(".logo-letter", {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      duration: 0.65,
+      ease: "back.out(1.7)",
+      stagger: 0.3,
+      delay: 2.4,
+    });
+  }, []);
+
   return (
     <div className="relative w-[min(90vw,720px)] aspect-square mx-auto">
       <Image
         src="/zenzakan/logo/logo.png"
         alt="Zenzakan Logo Reference"
         fill
-        className="object-contain"
+        className="hidden object-contain"
         priority
       />
 
-      <LogoRing className="hidden absolute top-[0.5%] left-[-2%] w-[107%] h-[105%]" />
+      <LogoRing className="absolute top-[21%] left-[20%] w-[61%] h-[61%]" />
 
       <LogoLetter
         src="/zenzakan/logo/z.webp"
         alt="Z"
-        className="left-[0.6%] top-[38.8%] w-[18.5%] h-[18.5%]"
+        className="logo-letter left-[0.6%] top-[38.8%] w-[18.5%] h-[18.5%]"
         priority
       />
       <LogoLetter
         src="/zenzakan/logo/e.webp"
         alt="E"
-        className="left-[15%] top-[41%] w-[13%] h-[15%]"
+        className="logo-letter left-[15%] top-[41%] w-[13%] h-[15%]"
         priority
       />
       <LogoLetter
         src="/zenzakan/logo/n.webp"
         alt="N"
-        className="left-[25%] top-[40%] w-[13%] h-[15%]"
+        className="logo-letter left-[25%] top-[40%] w-[13%] h-[15%]"
         priority
       />
       <LogoLetter
         src="/zenzakan/logo/Z1.webp"
         alt="Z1"
-        className="hidden left-[26%] top-[24%] w-[48%] h-[48%]"
+        className="logo-letter left-[26%] top-[24%] w-[48%] h-[48%]"
         priority
       />
       <LogoLetter
         src="/zenzakan/logo/a.webp"
         alt="A"
-        className="left-[52.3%] top-[41.5%] w-[16%] h-[16%]"
+        className="logo-letter left-[52.3%] top-[41.5%] w-[16%] h-[16%]"
         priority
       />
       <LogoLetter
         src="/zenzakan/logo/k.webp"
         alt="K"
-        className="left-[64%] top-[41.5%] w-[14%] h-[14%]"
+        className="logo-letter left-[64%] top-[41.5%] w-[14%] h-[14%]"
         priority
       />
       <LogoLetter
         src="/zenzakan/logo/a.webp"
         alt="A1"
-        className="left-[73%] top-[41.3%] w-[16%] h-[16%]"
+        className="logo-letter left-[73%] top-[41.3%] w-[16%] h-[16%]"
         priority
       />
       <LogoLetter
         src="/zenzakan/logo/n.webp"
         alt="N1"
-        className="left-[84.5%] top-[40%] w-[15%] h-[16%]"
+        className="logo-letter left-[84.5%] top-[40%] w-[15%] h-[16%]"
         priority
       />
       <LogoSubText
@@ -84,7 +106,7 @@ const ZenzakanLogo = () => {
         priority
       />
 
-      <LogoKatana className="left-[17.2%] top-[11.5%] w-[30%] h-[50%] -rotate-7" />
+      <LogoKatana className="left-[39%] top-[11.5%] w-[16%] h-[75%] rotate-4" />
     </div>
   );
 };

@@ -1,0 +1,20 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - img [ref=e6]
+    - img "Z" [ref=e10]
+    - img "E" [ref=e12]
+    - img "N" [ref=e14]
+    - img "Z1" [ref=e16]
+    - img "A" [ref=e18]
+    - img "K" [ref=e20]
+    - img "A1" [ref=e22]
+    - img "N1" [ref=e24]
+    - img "Pan" [ref=e26]
+    - img "Asian" [ref=e28]
+    - img "Supperclub" [ref=e30]
+    - generic [ref=e32] [cursor=pointer]:
+      - img "Katana gezogen" [ref=e33]
+      - img "Katana Scheide" [ref=e34]
+  - button "Open Next.js Dev Tools" [ref=e40] [cursor=pointer]:
+    - img [ref=e41]
+  - alert [ref=e44]
