@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 type LogoSubTextProps = {
   src: string;
@@ -6,16 +8,47 @@ type LogoSubTextProps = {
   className?: string;
   imageClassName?: string;
   priority?: boolean;
+  delay?: number;
 };
 
-const LogoSubText = ({ src, alt, className, imageClassName, priority }: LogoSubTextProps) => {
+const LogoSubText = ({
+  src,
+  alt,
+  className,
+  imageClassName,
+  priority,
+  delay,
+}: LogoSubTextProps) => {
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!rootRef.current) return;
+
+    gsap.fromTo(
+      rootRef.current,
+      {
+        opacity: 0,
+        y: 18,
+        filter: "blur(6px)",
+      },
+      {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        duration: 1.1,
+        delay,
+        ease: "power3.out",
+      },
+    );
+  }, [delay]);
+
   return (
-    <div className={`absolute ${className ?? ""}`}>
+    <div className={`absolute ${className ?? ""}`} ref={rootRef}>
       <Image
         src={src}
         alt={alt}
         fill
-        className={`object-contain ${imageClassName ?? ""}`}
+        className={`object-contain saturate-150 ${imageClassName ?? ""}`}
         priority={priority}
       />
     </div>

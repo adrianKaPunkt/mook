@@ -9,14 +9,36 @@ type LogoRingProps = {
 
 const LogoRing = ({ className }: LogoRingProps) => {
   const pathRef = useRef<SVGPathElement>(null);
+  const ringRef = useRef<SVGImageElement>(null);
 
   useEffect(() => {
-    if (!pathRef.current) return;
+    if (!pathRef.current || !ringRef.current) return;
+
     const length = pathRef.current.getTotalLength();
+
     gsap.fromTo(
       pathRef.current,
       { strokeDasharray: length, strokeDashoffset: length, strokeWidth: 190 },
-      { strokeDashoffset: 0, strokeWidth: 240, duration: 2.4, ease: "power3.out" },
+      {
+        strokeDashoffset: 0,
+        strokeWidth: 240,
+        duration: 2.4,
+        ease: "power3.out",
+      },
+    );
+
+    gsap.fromTo(
+      ringRef.current,
+      {
+        filter: "drop-shadow(0px 0px 0px rgba(255, 0, 0, 0.22))",
+      },
+      {
+        filter: "drop-shadow(0px 0px 65px rgba(255, 0, 0, 0.55))",
+        duration: 5,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      },
     );
   }, []);
 
@@ -27,6 +49,7 @@ const LogoRing = ({ className }: LogoRingProps) => {
           <filter id="brushEdge" x="-5%" y="-5%" width="110%" height="110%">
             <feGaussianBlur stdDeviation="5" />
           </filter>
+
           <mask id="ringRevealMask">
             <path
               ref={pathRef}
@@ -41,7 +64,9 @@ const LogoRing = ({ className }: LogoRingProps) => {
             />
           </mask>
         </defs>
+
         <image
+          ref={ringRef}
           href="/zenzakan/logo/ring.webp"
           x="0"
           y="0"
@@ -49,6 +74,9 @@ const LogoRing = ({ className }: LogoRingProps) => {
           height="900"
           preserveAspectRatio="xMidYMid meet"
           mask="url(#ringRevealMask)"
+          style={{
+            filter: "drop-shadow(0px 0px 28px rgba(255, 0, 0, 0.22))",
+          }}
         />
       </svg>
     </div>

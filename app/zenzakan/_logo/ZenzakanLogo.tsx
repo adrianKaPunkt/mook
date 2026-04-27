@@ -23,12 +23,12 @@ const ZenzakanLogo = () => {
       duration: 0.65,
       ease: "back.out(1.7)",
       stagger: 0.3,
-      delay: 2.4,
+      delay: 1.5,
     });
   }, []);
 
   return (
-    <div className="relative w-[min(90vw,720px)] aspect-square mx-auto">
+    <div className="relative w-[min(90vw,900px)] aspect-square mx-auto">
       <Image
         src="/zenzakan/logo/logo.png"
         alt="Zenzakan Logo Reference"
@@ -92,21 +92,24 @@ const ZenzakanLogo = () => {
         alt="Pan"
         className="left-[10%] top-[57%] w-[15%] h-[10%]"
         priority
+        delay={4.2}
       />
       <LogoSubText
         src="/zenzakan/logo/Asian.webp"
         alt="Asian"
         className="left-[19.3%] top-[56%] w-[26%] h-[11%]"
         priority
+        delay={4.4}
       />
       <LogoSubText
         src="/zenzakan/logo/Supperclub.webp"
         alt="Supperclub"
         className="left-[44.1%] top-[54.5%] w-[50%] h-[16%]"
         priority
+        delay={4.6}
       />
 
-      <LogoKatana className="left-[39%] top-[11.5%] w-[16%] h-[75%] rotate-4" />
+      <LogoKatana className="left-[39%] top-[11.5%] w-[16%] h-[75%] rotate-4" delay={4} />
     </div>
   );
 };
