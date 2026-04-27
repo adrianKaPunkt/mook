@@ -28,14 +28,14 @@ const ZenzakanLogo = () => {
   }, []);
 
   return (
-    <div className="relative w-[min(90vw,900px)] aspect-square mx-auto">
-      <Image
+    <div className="relative w-full aspect-square mx-auto">
+      {/* <Image
         src="/zenzakan/logo/logo.png"
         alt="Zenzakan Logo Reference"
         fill
-        className="hidden object-contain"
+        className="object-contain"
         priority
-      />
+      /> */}
 
       <LogoRing className="absolute top-[21%] left-[20%] w-[61%] h-[61%]" />
 
@@ -43,54 +43,63 @@ const ZenzakanLogo = () => {
         src="/zenzakan/logo/z.webp"
         alt="Z"
         className="logo-letter left-[0.6%] top-[38.8%] w-[18.5%] h-[18.5%]"
+        sizes="18.5vw"
         priority
       />
       <LogoLetter
         src="/zenzakan/logo/e.webp"
         alt="E"
         className="logo-letter left-[15%] top-[41%] w-[13%] h-[15%]"
+        sizes="13vw"
         priority
       />
       <LogoLetter
         src="/zenzakan/logo/n.webp"
         alt="N"
         className="logo-letter left-[25%] top-[40%] w-[13%] h-[15%]"
+        sizes="13vw"
         priority
       />
       <LogoLetter
         src="/zenzakan/logo/Z1.webp"
         alt="Z1"
         className="logo-letter left-[26%] top-[24%] w-[48%] h-[48%]"
+        sizes="48vw"
         priority
       />
       <LogoLetter
         src="/zenzakan/logo/a.webp"
         alt="A"
         className="logo-letter left-[52.3%] top-[41.5%] w-[16%] h-[16%]"
+        sizes="16vw"
         priority
       />
       <LogoLetter
         src="/zenzakan/logo/k.webp"
         alt="K"
         className="logo-letter left-[64%] top-[41.5%] w-[14%] h-[14%]"
+        sizes="14vw"
         priority
       />
       <LogoLetter
         src="/zenzakan/logo/a.webp"
         alt="A1"
         className="logo-letter left-[73%] top-[41.3%] w-[16%] h-[16%]"
+        sizes="16vw"
         priority
       />
       <LogoLetter
         src="/zenzakan/logo/n.webp"
         alt="N1"
         className="logo-letter left-[84.5%] top-[40%] w-[15%] h-[16%]"
+        sizes="15vw"
         priority
       />
       <LogoSubText
         src="/zenzakan/logo/Pan.webp"
         alt="Pan"
         className="left-[10%] top-[57%] w-[15%] h-[10%]"
+        sizes="15vw"
         priority
         delay={4.2}
       />
@@ -98,6 +107,7 @@ const ZenzakanLogo = () => {
         src="/zenzakan/logo/Asian.webp"
         alt="Asian"
         className="left-[19.3%] top-[56%] w-[26%] h-[11%]"
+        sizes="26vw"
         priority
         delay={4.4}
       />
@@ -105,6 +115,7 @@ const ZenzakanLogo = () => {
         src="/zenzakan/logo/Supperclub.webp"
         alt="Supperclub"
         className="left-[44.1%] top-[54.5%] w-[50%] h-[16%]"
+        sizes="50vw"
         priority
         delay={4.6}
       />

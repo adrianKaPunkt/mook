@@ -9,6 +9,7 @@ type LogoSubTextProps = {
   imageClassName?: string;
   priority?: boolean;
   delay?: number;
+  sizes?: string;
 };
 
 const LogoSubText = ({
@@ -18,6 +19,7 @@ const LogoSubText = ({
   imageClassName,
   priority,
   delay,
+  sizes,
 }: LogoSubTextProps) => {
   const rootRef = useRef<HTMLDivElement>(null);
 
@@ -50,6 +52,7 @@ const LogoSubText = ({
         fill
         className={`object-contain saturate-150 ${imageClassName ?? ""}`}
         priority={priority}
+        sizes={sizes ?? "20vw"}
       />
     </div>
   );

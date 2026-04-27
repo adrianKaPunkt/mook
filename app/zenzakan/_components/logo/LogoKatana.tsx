@@ -51,6 +51,7 @@ const LogoKatana = ({ className, delay }: LogoKatanaProps) => {
         <Image
           src="/zenzakan/logo/katana-o.webp"
           alt="Katana gezogen"
+          sizes="20vw"
           fill
           className={`object-contain transition-transform duration-2000 ease-out ${
             hovered ? "-translate-y-[9%] translate-x-[17%]" : "translate-y-[1.8%] translate-x-[11%]"
@@ -60,6 +61,7 @@ const LogoKatana = ({ className, delay }: LogoKatanaProps) => {
         <Image
           src="/zenzakan/logo/katana-u.webp"
           alt="Katana Scheide"
+          sizes="20vw"
           fill
           priority
           className="object-contain"

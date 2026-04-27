@@ -2,9 +2,9 @@ import HeroSection from "./_sections/HeroSection";
 
 const ZenzakanPage = () => {
   return (
-    <div className="h-screen bg-black">
+    <main className="min-h-screen" data-theme="zenzakan">
       <HeroSection />
-    </div>
+    </main>
   );
 };
 

@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+/* [data-theme= "zenzakan"] {
+  
+} */
+
+@theme {
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+
+  --primary: #7a0000;
+  --secondary: #111111;
+  --accent: #c8a24a;
+
+  --background: #050505;
+  --foreground: #f5efe5;
+
+  --muted: #999999;
+  --border: rgba(200, 162, 74, 0.2);
+}

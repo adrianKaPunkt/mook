@@ -6,9 +6,17 @@ type LogoLetterProps = {
   className?: string;
   imageClassName?: string;
   priority?: boolean;
+  sizes?: string;
 };
 
-const LogoLetter = ({ src, alt, className, imageClassName, priority = false }: LogoLetterProps) => {
+const LogoLetter = ({
+  src,
+  alt,
+  className,
+  imageClassName,
+  priority = false,
+  sizes,
+}: LogoLetterProps) => {
   return (
     <div className={`absolute ${className ?? ""}`}>
       <div className="relative w-full h-full">
@@ -16,6 +24,7 @@ const LogoLetter = ({ src, alt, className, imageClassName, priority = false }: L
           src={src}
           alt={alt}
           fill
+          sizes={sizes ?? "20vw"}
           priority={priority}
           className={`object-contain ${imageClassName ?? "hover:contrast-125 hover:scale-105 saturate-150 transition duration-300 ease-out"}`}
         />
