@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import type { Category as PrismaCategory } from "@prisma/client";
 import MenuItemCard from "./MenuItemCard";
 
 type ItemProps = {
@@ -18,7 +17,10 @@ type ItemProps = {
   servingInfo: string | null;
 };
 
-type CategoryWithItems = Pick<PrismaCategory, "id" | "name_de" | "name_en"> & {
+type CategoryWithItems = {
+  id: string;
+  name_de: string;
+  name_en: string;
   items: ItemProps[];
 };
 
