@@ -165,7 +165,7 @@ export default function DishShowcase() {
   }, []);
 
   return (
-    <section className="relative w-full overflow-visible -mt-40" style={{ height: "580px" }}>
+    <section className="relative w-full overflow-visible -mt-40" style={{ height: "680px" }}>
       {/* Masken */}
       <div className="absolute inset-0 pointer-events-none z-20" />
       <div className="absolute inset-0 pointer-events-none z-20" />
