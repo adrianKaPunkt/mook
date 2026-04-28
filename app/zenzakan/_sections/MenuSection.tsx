@@ -4,6 +4,40 @@ import MenuTabs from "../_components/menu/MenuTabs";
 import { getDictionary, hasLocale } from "../dictionaries";
 import DishShowcase from "../_components/menu/DishShowcase";
 
+type MenuItemFromQuery = {
+  id: string;
+  createdAt: Date;
+  updatedAt: Date;
+  sortOrder: number;
+  isActive: boolean;
+  name: string;
+  description_de: string | null;
+  description_en: string | null;
+  price: unknown;
+  imageUrl: string | null;
+  allergens: string[];
+  spiceLevel: number | null;
+  upgrades: unknown;
+  newUntil: Date | null;
+  servingInfo: string | null;
+  categoryId: string;
+};
+
+type CategoryFromQuery = {
+  id: string;
+  createdAt: Date;
+  updatedAt: Date;
+  sortOrder: number;
+  isActive: boolean;
+  name_de: string;
+  name_en: string;
+  description_de: string | null;
+  description_en: string | null;
+  imageUrl: string | null;
+  locationId: string;
+  items: MenuItemFromQuery[];
+};
+
 export default async function MenuSection({ lang }: { lang: string }) {
   const locale = hasLocale(lang) ? lang : "de";
   const slug = "zenzakan";
@@ -27,7 +61,7 @@ export default async function MenuSection({ lang }: { lang: string }) {
 
   if (!menu || !menu.isActive) notFound();
 
-  const categories = menu.categories.map((cat) => ({
+  const categories = (menu.categories as CategoryFromQuery[]).map((cat) => ({
     ...cat,
     items: cat.items.map((item) => ({
       ...item,
