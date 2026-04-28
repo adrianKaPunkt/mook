@@ -17,14 +17,14 @@ function rnd(seed: number, offset = 0): number {
   return x - Math.floor(x);
 }
 
-const items = Array.from({ length: 48 }).map((_, i) => {
+const items = Array.from({ length: 33 }).map((_, i) => {
   const r = (o: number) => rnd(i, o);
 
   // Group petals into wind gusts (5 per gust) so they arrive in bursts
   const gustGroup = Math.floor(i / 5);
   const gustOffset = (i % 5) * 0.55;
   const delay = gustGroup * 4.2 + gustOffset + r(0) * 1.2;
-  const repeatDelay = r(24) * 3.5;
+  const repeatDelay = r(24) * 1.5;
 
   const duration = 20 + r(1) * 14;
   const size = 10 + Math.round(r(2) * 20);
@@ -84,7 +84,20 @@ const items = Array.from({ length: 48 }).map((_, i) => {
 
   const opacity = 0.18 + r(23) * 0.32;
 
-  return { src: petals[i % petals.length], top, right, size, delay, repeatDelay, duration, opacity, yValues, rotValues, xValues, times };
+  return {
+    src: petals[i % petals.length],
+    top,
+    right,
+    size,
+    delay,
+    repeatDelay,
+    duration,
+    opacity,
+    yValues,
+    rotValues,
+    xValues,
+    times,
+  };
 });
 
 export default function Sakura() {
@@ -100,7 +113,16 @@ export default function Sakura() {
             x: item.xValues,
             y: item.yValues,
             rotate: item.rotValues,
-            opacity: [0, item.opacity, item.opacity, item.opacity, item.opacity, item.opacity * 0.8, item.opacity * 0.4, 0],
+            opacity: [
+              0,
+              item.opacity,
+              item.opacity,
+              item.opacity,
+              item.opacity,
+              item.opacity * 0.8,
+              item.opacity * 0.4,
+              0,
+            ],
           }}
           transition={{
             duration: item.duration,

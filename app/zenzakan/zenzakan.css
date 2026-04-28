@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+[data-theme="zenzakan"] {
+  --primary: #7a0000;
+  --secondary: #111111;
+  --accent: #c8a24a;
+
+  --background: #050505;
+  --foreground: #f5efe5;
+
+  --muted: #999999;
+  --border: rgba(200, 162, 74, 0.2);
+}
+
+@theme {
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+  --breakpoint-3xl: 120rem; /* 1920px */
+}
+
+@utility zen-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  @media (min-width: 768px) {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  @media (min-width: 1280px) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  @media (min-width: 1920px) {
+    max-width: 1800px;
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+  @media (min-width: 2560px) {
+    max-width: 2200px;
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+}

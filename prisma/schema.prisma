@@ -1,0 +1,120 @@
+// =============================================================================
+// Zenzakan Restaurantgruppe — Prisma Schema
+// Prisma v7+
+// =============================================================================
+// Architektur-Entscheidungen:
+// - Eine Codebase für alle 5 Restaurants
+// - location_id als Trennung (kein Multi-Tenant)
+// - Einheitliches Base-Model für alle Tabellen
+// - Allergene & Schärfegrad als TypeScript Enums im Code (nicht in DB)
+// - Mehrsprachigkeit: name einsprachig, description_de / description_en
+// - Soft Delete via isActive (kein isDeleted)
+// - Unique Constraints verhindern Duplikate innerhalb einer Location/Category
+// - Weine, Mitarbeiter, Kunden, Menüs — separate Module, später ergänzbar
+// =============================================================================
+// Hinweis: In Prisma v7 wird die Datenbankverbindung NICHT mehr hier konfiguriert.
+// Die DATABASE_URL kommt aus prisma.config.ts
+// =============================================================================
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// =============================================================================
+// LOCATION
+// Repräsentiert ein Restaurant der Gruppe (z.B. Zenzakan, Franziska, ...)
+// Jede Location hat ihre eigene Speisekarte
+// =============================================================================
+model Location {
+  // Base
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  sortOrder Int      @default(0)
+  isActive  Boolean  @default(true)
+
+  // Inhalt
+  name String
+  slug String @unique // z.B. "zenzakan" — für Routing & Icon-Pfade
+
+  // Relationen
+  categories Category[]
+}
+
+// =============================================================================
+// CATEGORY
+// Gruppierung der Gerichte pro Location (z.B. "Sushi & Tiradito", "Meat", ...)
+// Jede Category gehört zu genau einer Location
+//
+// Unique Constraint: Kein doppelter Kategoriename innerhalb einer Location
+// =============================================================================
+model Category {
+  // Base
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  sortOrder Int      @default(0)
+  isActive  Boolean  @default(true)
+
+  // Inhalt
+  name_de        String
+  name_en        String
+  description_de String?
+  description_en String?
+  imageUrl       String?
+
+  // Relationen
+  locationId String
+  location   Location   @relation(fields: [locationId], references: [id])
+  items      MenuItem[]
+
+  // Constraints
+  @@unique([locationId, name_de])
+}
+
+// =============================================================================
+// MENU ITEM
+// Ein Gericht auf der Speisekarte
+// Gehört zu einer Category (und damit indirekt zu einer Location)
+//
+// Hinweise:
+// - allergens: String[] — Werte entsprechen dem Allergen Enum im TypeScript Code
+// - spiceLevel: Int? — Anzahl Chilis (0-4), null = nicht relevant
+// - upgrades: Json? — optionale Add-ons z.B. [{ name: "Imperial Caviar 30g", price: 69.99 }]
+// - newUntil: DateTime? — null = kein "New" Badge, sonst Badge bis zu diesem Datum
+// - servingInfo: String? — z.B. "For Two", "mind. 2 Stk.", "pro Stk."
+//
+// Unique Constraint: Kein doppelter Gerichtname innerhalb einer Category
+// =============================================================================
+model MenuItem {
+  // Base
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  sortOrder Int      @default(0)
+  isActive  Boolean  @default(true)
+
+  // Inhalt
+  name           String
+  description_de String?
+  description_en String?
+  price          Decimal   @db.Decimal(10, 2)
+  imageUrl       String?
+  allergens      String[]  // z.B. ["GLUTEN", "DAIRY", "NUTS"]
+  spiceLevel     Int?      // 0-4, null = nicht scharf / nicht relevant
+  upgrades       Json?     // [{ name: String, price: Decimal }]
+  newUntil       DateTime? // Badge verschwindet automatisch nach diesem Datum
+  servingInfo    String?   // Freitext für Servierhinweise
+
+  // Relationen
+  categoryId String
+  category   Category @relation(fields: [categoryId], references: [id])
+
+  // Constraints
+  @@unique([categoryId, name])
+}

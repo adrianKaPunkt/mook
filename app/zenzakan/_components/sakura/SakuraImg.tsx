@@ -20,7 +20,7 @@ const items = Array.from({ length: 7 }).map((_, i) => {
   const r = (o: number) => rnd(i + 100, o);
 
   const delay = i * 3.2 + r(0) * 2.5;
-  const repeatDelay = r(24) * 5;
+  const repeatDelay = r(24) * 2;
 
   const duration = 28 + r(1) * 18;
   const size = 38 + Math.round(r(2) * 28);
