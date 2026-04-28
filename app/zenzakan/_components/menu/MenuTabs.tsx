@@ -38,8 +38,8 @@ export default function MenuTabs({
   return (
     <div className="zen-container py-10">
       {/* Sticky category tabs */}
-      <div className="sticky top-0 z-10 pb-4 bg-[#0a0a0a]/90 backdrop-blur-sm">
-        <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
+      <div className="sticky top-0 z-10 pb-4 flex justify-center">
+        <div className="flex gap-2 pb-1">
           {categories.map((cat) => {
             const isActive = activeTab === cat.id;
             return (
@@ -57,20 +57,14 @@ export default function MenuTabs({
             );
           })}
         </div>
-        {/* Bottom rule */}
-        <div className="h-px bg-linear-to-r from-[#b8960c]/20 via-[#b8960c]/10 to-transparent mt-3" />
       </div>
 
       {/* Category title */}
       {activeCategory && (
-        <div className="mt-10 mb-8">
-          <h2 className="text-white/80 font-serif text-2xl md:text-3xl tracking-wide">
+        <div className="mt-10 mb-10 text-center">
+          <h2 className="text-white/80 text-2xl md:text-3xl tracking-wide">
             {locale === "de" ? activeCategory.name_de : activeCategory.name_en}
           </h2>
-          <p className="text-[#444] text-xs tracking-widest mt-1">
-            {activeCategory.items.length}{" "}
-            {activeCategory.items.length === 1 ? "Gericht" : "Gerichte"}
-          </p>
         </div>
       )}
 
