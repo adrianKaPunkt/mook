@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { cn } from "@/lib/utils";
 
 type LogoRingProps = {
   className?: string;
@@ -33,8 +34,8 @@ const LogoRing = ({ className }: LogoRingProps) => {
         filter: "drop-shadow(0px 0px 0px rgba(255, 0, 0, 0.22))",
       },
       {
-        filter: "drop-shadow(0px 0px 65px rgba(255, 0, 0, 0.55))",
-        duration: 5,
+        filter: "drop-shadow(0px 0px 66px rgba(255, 0, 0, 0.55))",
+        duration: 2.5,
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
@@ -43,10 +44,10 @@ const LogoRing = ({ className }: LogoRingProps) => {
   }, []);
 
   return (
-    <div className={className}>
+    <div className={cn("overflow-visible", className)}>
       <svg viewBox="0 0 894 900" className="w-full h-full overflow-visible">
         <defs>
-          <filter id="brushEdge" x="-5%" y="-5%" width="110%" height="110%">
+          <filter id="brushEdge" x="-30%" y="-30%" width="160%" height="160%">
             <feGaussianBlur stdDeviation="5" />
           </filter>
 
@@ -74,8 +75,9 @@ const LogoRing = ({ className }: LogoRingProps) => {
           height="900"
           preserveAspectRatio="xMidYMid meet"
           mask="url(#ringRevealMask)"
+          className="visible"
           style={{
-            filter: "drop-shadow(0px 0px 28px rgba(255, 0, 0, 0.22))",
+            filter: "drop-shadow(0px 0px 66px rgba(255, 0, 0, 0.55))",
           }}
         />
       </svg>

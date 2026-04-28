@@ -37,7 +37,7 @@ const ZenzakanLogo = () => {
         priority
       /> */}
 
-      <LogoRing className="absolute top-[21%] left-[20%] w-[61%] h-[61%]" />
+      <LogoRing className="absolute top-[21%] left-[20%] w-[61%] h-[61%] overflow-visible" />
 
       <LogoLetter
         src="/zenzakan/logo/z.webp"
