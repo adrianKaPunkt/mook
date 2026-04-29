@@ -23,7 +23,7 @@ export default function MenuItemCard({ item, locale }: { item: Item; locale: "de
   const upgrades = item.upgrades as Upgrade[] | null;
 
   return (
-    <div className="group relative bg-[#0f0f0f] border border-[#1a1a1a] rounded-2xl p-6 transition-all duration-300 hover:border-[#b8960c]/30 hover:bg-[#111] hover:shadow-[0_0_30px_-8px_rgba(184,150,12,0.15)]">
+    <div className="group relative border border-primary/30 shadow-sm shadow-primary rounded-2xl p-6 transition-all duration-300 hover:border-accent/50 hover:shadow-accent/30">
       {/* New Badge */}
       {isNew && (
         <span className="absolute top-4 right-4 text-[9px] tracking-[0.2em] uppercase bg-[#b8960c] text-black px-2.5 py-1 rounded-full font-semibold">
@@ -38,14 +38,9 @@ export default function MenuItemCard({ item, locale }: { item: Item; locale: "de
             {item.name}
           </h3>
 
-          {/* Serving Info */}
-          {item.servingInfo && (
-            <p className="text-primary/70 text-xs tracking-wider mb-2">{item.servingInfo}</p>
-          )}
-
           {/* Description */}
           {description && (
-            <p className="text-[#4a4a4a] text-sm leading-relaxed group-hover:text-[#555] transition-colors duration-300">
+            <p className="text-accent text-sm leading-relaxed group-hover:text-[#555] transition-colors duration-300">
               {description}
             </p>
           )}
