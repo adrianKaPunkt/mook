@@ -43,7 +43,7 @@ export default async function MenuSection({ lang }: { lang: string }) {
   }));
 
   return (
-    <section className="min-h-screen bg-background">
+    <section id="menu" className="min-h-screen bg-zinc-950">
       <div className="relative overflow-hidden">
         <div
           aria-hidden="true"
@@ -60,7 +60,7 @@ export default async function MenuSection({ lang }: { lang: string }) {
           }}
         />
 
-        <div className="relative z-10 py-24 text-center border-b overflow-visible">
+        <div className="relative z-10 py-24 text-center overflow-visible">
           <Shoku />
           <h1 className="relative uppercase text-white font-heading text-5xl md:text-7xl tracking-tight">
             {dict.menu.title}

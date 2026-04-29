@@ -2,6 +2,7 @@ import { Open_Sans, Manrope } from "next/font/google";
 import "./zenzakan.css";
 import Navbar from "./_components/Navbar";
 import { cookies } from "next/headers";
+import Footer from "@/components/Footer";
 
 const heading = Open_Sans({
   subsets: ["latin"],
@@ -13,11 +14,7 @@ const body = Manrope({
   variable: "--font-body",
 });
 
-export default async function ZenzakanLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default async function ZenzakanLayout({ children }: { children: React.ReactNode }) {
   const cookieStore = await cookies();
   const lang = cookieStore.get("NEXT_LOCALE")?.value ?? "de";
 
@@ -25,6 +22,7 @@ export default async function ZenzakanLayout({
     <div className={`${heading.variable} ${body.variable}`} data-theme="zenzakan">
       <Navbar lang={lang} />
       {children}
+      <Footer />
     </div>
   );
 }

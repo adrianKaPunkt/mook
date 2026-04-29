@@ -10,12 +10,12 @@ export const allergens: Allergens[] = [
     imageUrl: "/allergens/gluten.svg",
   },
   {
-    key: "CRUSTACEANS",
-    name_de: "Krebstiere",
-    name_en: "Crustaceans",
-    description_en: "Crustaceans and products thereof",
-    description_de: "Krebstiere und daraus hergestellte Erzeugnisse",
-    imageUrl: "/allergens/crustaceans.svg",
+    key: "MILK",
+    name_de: "Milch",
+    name_en: "Milk",
+    description_en: "Milk and products thereof (including lactose)",
+    description_de: "Milch und daraus hergestellte Erzeugnisse (einschließlich Laktose)",
+    imageUrl: "/allergens/milk.svg",
   },
   {
     key: "EGGS",
@@ -34,6 +34,14 @@ export const allergens: Allergens[] = [
     imageUrl: "/allergens/fish.svg",
   },
   {
+    key: "CRUSTACEANS",
+    name_de: "Krebstiere",
+    name_en: "Crustaceans",
+    description_en: "Crustaceans and products thereof",
+    description_de: "Krebstiere und daraus hergestellte Erzeugnisse",
+    imageUrl: "/allergens/crustaceans.svg",
+  },
+  {
     key: "PEANUTS",
     name_de: "Erdnüsse",
     name_en: "Peanuts",
@@ -48,14 +56,6 @@ export const allergens: Allergens[] = [
     description_en: "Soybeans and products thereof",
     description_de: "Sojabohnen und daraus hergestellte Erzeugnisse",
     imageUrl: "/allergens/soy.svg",
-  },
-  {
-    key: "MILK",
-    name_de: "Milch",
-    name_en: "Milk",
-    description_en: "Milk and products thereof (including lactose)",
-    description_de: "Milch und daraus hergestellte Erzeugnisse (einschließlich Laktose)",
-    imageUrl: "/allergens/milk.svg",
   },
   {
     key: "NUTS",

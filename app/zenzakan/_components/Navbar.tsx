@@ -13,8 +13,10 @@ export default function Navbar({ lang }: { lang: string }) {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${scrolled ? "bg-black/80 backdrop-blur-md border-b border-white/5" : ""}`}>
-      <div className="zen-container flex items-center justify-between py-5">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${scrolled ? "bg-black/80 backdrop-blur-md border-b border-white/5" : ""}`}
+    >
+      <div className="mg-container flex items-center justify-between py-5">
         <a
           href="/zenzakan"
           className="font-heading text-foreground text-lg tracking-widest uppercase"

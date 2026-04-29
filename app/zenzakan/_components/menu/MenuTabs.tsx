@@ -66,8 +66,8 @@ export default function MenuTabs({
   };
 
   return (
-    <div className="zen-container">
-      <div className="sticky top-0 z-10 pb-4 relative border-t border-foreground/10 pt-10 mb-8">
+    <div className="mg-container">
+      <div className="sticky top-0 z-10 pb-4 relative pt-10 mb-8">
         <div
           ref={scrollRef}
           className="overflow-x-auto scrollbar cursor-grab active:cursor-grabbing select-none"
@@ -99,7 +99,7 @@ export default function MenuTabs({
         </div>
       </div>
       <AllergenPicker
-        className="mb-8 flex justify-center w-full items-center"
+        className="sticky top-0 mb-8 flex justify-center w-full overflow-x-auto items-center"
         lang={locale}
         selectedAllergens={selectedAllergens}
         onToggleAllergen={toggleAllergen}

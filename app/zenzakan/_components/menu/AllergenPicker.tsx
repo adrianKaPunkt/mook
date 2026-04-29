@@ -16,7 +16,7 @@ const AllergenPicker: React.FC<AllergenPickerProps> = ({
 }) => {
   return (
     <div className={className}>
-      <div className="flex gap-5 overflow-x-auto scrollbar">
+      <div className="flex w-max gap-5 overflow-x-auto scrollbar opac">
         {allergens.map((allergen) => {
           const isSelected = selectedAllergens.includes(allergen.key);
           const name = lang === "de" ? allergen.name_de : allergen.name_en;
@@ -29,7 +29,7 @@ const AllergenPicker: React.FC<AllergenPickerProps> = ({
               aria-label={name}
               title={name}
               onClick={() => onToggleAllergen(allergen.key)}
-              className={`rounded-full p-2 transition-all duration-300 cursor-pointer ${
+              className={`shrink-0 rounded-full p-2 transition-all duration-300 cursor-pointer ${
                 isSelected
                   ? "bg-primary hover:bg-accent"
                   : "bg-transparent ring-1 ring-primary/40 opacity-35 hover:opacity-70"

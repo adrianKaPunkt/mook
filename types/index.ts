@@ -1,3 +1,24 @@
+export type Location = {
+  id: string;
+  name: string;
+  slug: string;
+  createdAt: Date;
+  updatedAt: Date;
+  street?: string;
+  city?: string;
+  zip?: string;
+  country?: string;
+  phone?: string;
+  email?: string;
+  imageUrl?: string;
+  isActive: boolean;
+  openingHours?: {
+    day: string;
+    open: string;
+    close: string;
+  }[];
+};
+
 export type MenuItem = {
   id: string;
   name: string;

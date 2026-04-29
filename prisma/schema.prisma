@@ -39,8 +39,15 @@ model Location {
   isActive  Boolean  @default(true)
 
   // Inhalt
-  name String
-  slug String @unique // z.B. "zenzakan" — für Routing & Icon-Pfade
+  name    String
+  slug    String  @unique // z.B. "zenzakan" — für Routing & Icon-Pfade
+  street  String?
+  city    String?
+  zip     String?
+  country String?
+  phone   String?
+  email   String?
+  imageUrl String?
 
   // Relationen
   categories Category[]
