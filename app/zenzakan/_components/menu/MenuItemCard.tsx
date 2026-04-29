@@ -24,9 +24,6 @@ export default function MenuItemCard({ item, locale }: { item: Item; locale: "de
 
   return (
     <div className="group relative bg-[#0f0f0f] border border-[#1a1a1a] rounded-2xl p-6 transition-all duration-300 hover:border-[#b8960c]/30 hover:bg-[#111] hover:shadow-[0_0_30px_-8px_rgba(184,150,12,0.15)]">
-      {/* Gold left accent line on hover */}
-      <div className="absolute left-0 top-6 bottom-6 w-px bg-[#b8960c] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
       {/* New Badge */}
       {isNew && (
         <span className="absolute top-4 right-4 text-[9px] tracking-[0.2em] uppercase bg-[#b8960c] text-black px-2.5 py-1 rounded-full font-semibold">

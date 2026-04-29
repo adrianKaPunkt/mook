@@ -1,7 +1,29 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 import ZenzakanLogo from "../_components/logo/ZenzakanLogo";
 import Sakura from "../_components/sakura/Sakura";
 import SakuraImg from "../_components/sakura/SakuraImg";
+
+const container = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.5,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 36 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.85, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+  },
+};
 
 const HeroSection = () => {
   return (
@@ -22,31 +44,48 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <h1 className="font-heading text-foreground/80 mb-12 max-w-2xl text-3xl leading-[1.2] tracking-tight sm:text-4xl lg:text-5xl">
-            Erleben Sie die Kunst der asiatischen Küche.
-          </h1>
-
-          <p className="font-body font-light mb-10 max-w-md text-base leading-8 text-white/75 sm:text-lg">
-            Mit feinsten Zutaten, meisterhafter Zubereitung und einem Ambiente, das alle Sinne
-            berührt.
-          </p>
-
-          <div className="flex w-full flex-col justify-center gap-4 sm:w-auto sm:flex-row">
-            <a
-              href="#reservation"
-              className="rounded-md font-body inline-flex items-center justify-center border border-primary bg-primary px-8 py-4 text-sm uppercase tracking-[0.25em] text-white transition hover:border-[#c1121f] hover:bg-[#c1121f]"
+          <motion.div
+            className="flex flex-col items-center"
+            variants={container}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.h1
+              variants={item}
+              className="font-heading text-foreground/80 mb-12 max-w-2xl text-3xl leading-[1.2] tracking-tight sm:text-4xl lg:text-5xl"
             >
-              Tisch reservieren
-            </a>
+              Erleben Sie die Kunst der asiatischen Küche.
+            </motion.h1>
 
-            <a
-              href="#menu"
-              className="rounded-md font-body inline-flex items-center justify-center border border-white/30 px-8 py-4 text-sm uppercase tracking-[0.25em] text-white transition hover:border-primary hover:text-primary"
+            <motion.p
+              variants={item}
+              className="font-body font-light mb-10 max-w-md text-base leading-8 text-white/75 sm:text-lg"
             >
-              Speisekarte
-            </a>
-          </div>
+              Mit feinsten Zutaten, meisterhafter Zubereitung und einem Ambiente, das alle Sinne
+              berührt.
+            </motion.p>
+
+            <motion.div
+              variants={item}
+              className="flex w-full flex-col justify-center gap-4 sm:w-auto sm:flex-row"
+            >
+              <a
+                href="#reservation"
+                className="rounded-md font-body inline-flex items-center justify-center border border-primary bg-primary px-8 py-4 text-sm uppercase tracking-[0.25em] text-white transition hover:border-[#c1121f] hover:bg-[#c1121f]"
+              >
+                Tisch reservieren
+              </a>
+
+              <a
+                href="#menu"
+                className="rounded-md font-body inline-flex items-center justify-center border border-white/30 px-8 py-4 text-sm uppercase tracking-[0.25em] text-white transition hover:border-accent hover:text-accent"
+              >
+                Speisekarte
+              </a>
+            </motion.div>
+          </motion.div>
         </div>
+
         <div className="relative hidden lg:block">
           <Sakura />
           <SakuraImg />

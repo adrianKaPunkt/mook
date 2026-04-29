@@ -3,6 +3,7 @@ import { prisma } from "@/lib/prisma";
 import MenuTabs from "../_components/menu/MenuTabs";
 import { getDictionary, hasLocale } from "../dictionaries";
 import DishShowcase from "../_components/menu/DishShowcase";
+import Shoku from "../_components/menu/Shoku";
 
 type MenuItemFromQuery = {
   id: string;
@@ -75,20 +76,34 @@ export default async function MenuSection({ lang }: { lang: string }) {
   }));
 
   return (
-    <section className="min-h-screen bg-background pt-10">
-      {/* Header */}
-      <div className="relative py-24 text-center border-b overflow-visible">
-        {/* Decorative kanji watermark */}
-        <span className="absolute inset-0 flex items-center justify-center text-[20rem] leading-none text-primary/50 select-none pointer-events-none">
-          食
-        </span>
-        <h1 className="relative text-white font-heading text-5xl md:text-7xl tracking-tight">
-          {dict.menu.title}
-        </h1>
-      </div>
-      <DishShowcase />
+    <section className="min-h-screen bg-background">
+      <div className="relative overflow-hidden">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 z-0 pointer-events-none bg-primary opacity-10"
+          style={{
+            WebkitMaskImage: "url(/zenzakan/images/background-menu.svg)",
+            maskImage: "url(/zenzakan/images/background-menu.svg)",
+            WebkitMaskPosition: "center",
+            maskPosition: "center",
+            WebkitMaskRepeat: "no-repeat",
+            maskRepeat: "no-repeat",
+            WebkitMaskSize: "cover",
+            maskSize: "cover",
+          }}
+        />
 
-      {/* Menu */}
+        <div className="relative z-10 py-24 text-center border-b overflow-visible">
+          <Shoku />
+          <h1 className="relative uppercase text-white font-heading text-5xl md:text-7xl tracking-tight">
+            {dict.menu.title}
+          </h1>
+        </div>
+
+        <div className="relative z-10">
+          <DishShowcase />
+        </div>
+      </div>
       <MenuTabs categories={categories} lang={locale} />
     </section>
   );
