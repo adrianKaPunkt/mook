@@ -71,23 +71,23 @@
 
 @keyframes zen-menu-shadow-pulse {
   0% {
-    box-shadow: 0 0 var(--menu-shadow-blur-start, 12px)
-      rgb(200 162 74 / var(--menu-shadow-alpha-start, 0.16));
+    box-shadow: 0 0 var(--menu-shadow-blur-start, 0px)
+      rgb(200 50 74 / var(--menu-shadow-alpha-start, 0.16));
   }
 
   68% {
-    box-shadow: 0 0 var(--menu-shadow-blur-start, 12px)
-      rgb(200 162 74 / var(--menu-shadow-alpha-start, 0.16));
+    box-shadow: 0 0 var(--menu-shadow-blur-start, 0px)
+      rgb(200 50 74 / var(--menu-shadow-alpha-start, 0.16));
   }
 
   82% {
-    box-shadow: 0 0 var(--menu-shadow-blur-end, 24px)
-      rgb(200 162 74 / var(--menu-shadow-alpha-end, 0.3));
+    box-shadow: 0 0 var(--menu-shadow-blur-end, 12px)
+      rgb(200 50 74 / var(--menu-shadow-alpha-end, 0.3));
   }
 
   100% {
-    box-shadow: 0 0 var(--menu-shadow-blur-start, 12px)
-      rgb(200 162 74 / var(--menu-shadow-alpha-start, 0.16));
+    box-shadow: 0 0 var(--menu-shadow-blur-start, 0px)
+      rgb(200 50 74 / var(--menu-shadow-alpha-start, 0.16));
   }
 }
 

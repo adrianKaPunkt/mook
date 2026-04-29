@@ -13,9 +13,8 @@ export type Location = {
   imageUrl?: string;
   isActive: boolean;
   openingHours?: {
-    day: string;
-    open: string;
-    close: string;
+    days: string;
+    hours: string;
   }[];
 };
 

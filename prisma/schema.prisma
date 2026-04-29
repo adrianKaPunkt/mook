@@ -45,9 +45,10 @@ model Location {
   city    String?
   zip     String?
   country String?
-  phone   String?
-  email   String?
-  imageUrl String?
+  phone        String?
+  email        String?
+  imageUrl     String?
+  openingHours Json?
 
   // Relationen
   categories Category[]

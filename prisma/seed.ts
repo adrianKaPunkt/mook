@@ -13,7 +13,19 @@ async function main() {
   // ===========================================================================
   const zenzakan = await prisma.location.upsert({
     where: { slug: "zenzakan" },
-    update: { name: "Zenzakan" },
+    update: {
+      name: "Zenzakan",
+      street: "Taunusanlage 15",
+      city: "Frankfurt am Main",
+      zip: "60325",
+      country: "Deutschland",
+      email: "info@zenzakan.de",
+      phone: "+49 69 97086908",
+      openingHours: [
+        { days: "Mo – Fr", hours: "12:00 – 15:00 & 18:00 – 00:00" },
+        { days: "Sa – So", hours: "12:00 – 00:00" },
+      ],
+    },
     create: {
       name: "Zenzakan",
       street: "Taunusanlage 15",
@@ -24,6 +36,10 @@ async function main() {
       phone: "+49 69 97086908",
       slug: "zenzakan",
       sortOrder: 1,
+      openingHours: [
+        { days: "Mo – Fr", hours: "12:00 – 15:00 & 18:00 – 00:00" },
+        { days: "Sa – So", hours: "12:00 – 00:00" },
+      ],
     },
   });
 
