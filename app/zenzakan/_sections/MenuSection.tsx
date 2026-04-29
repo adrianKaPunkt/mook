@@ -4,40 +4,7 @@ import MenuTabs from "../_components/menu/MenuTabs";
 import { getDictionary, hasLocale } from "../dictionaries";
 import DishShowcase from "../_components/menu/DishShowcase";
 import Shoku from "../_components/menu/Shoku";
-
-type MenuItemFromQuery = {
-  id: string;
-  createdAt: Date;
-  updatedAt: Date;
-  sortOrder: number;
-  isActive: boolean;
-  name: string;
-  description_de: string | null;
-  description_en: string | null;
-  price: unknown;
-  imageUrl: string | null;
-  allergens: string[];
-  spiceLevel: number | null;
-  upgrades: unknown;
-  newUntil: Date | null;
-  servingInfo: string | null;
-  categoryId: string;
-};
-
-type CategoryFromQuery = {
-  id: string;
-  createdAt: Date;
-  updatedAt: Date;
-  sortOrder: number;
-  isActive: boolean;
-  name_de: string;
-  name_en: string;
-  description_de: string | null;
-  description_en: string | null;
-  imageUrl: string | null;
-  locationId: string;
-  items: MenuItemFromQuery[];
-};
+import { MenueCategory } from "@/types";
 
 export default async function MenuSection({ lang }: { lang: string }) {
   const locale = hasLocale(lang) ? lang : "de";
@@ -62,14 +29,14 @@ export default async function MenuSection({ lang }: { lang: string }) {
 
   if (!menu || !menu.isActive) notFound();
 
-  const categories = (menu.categories as CategoryFromQuery[]).map((cat) => ({
+  const categories = (menu.categories as MenueCategory[]).map((cat) => ({
     ...cat,
     items: cat.items.map((item) => ({
       ...item,
       price: Number(item.price),
-      newUntil: item.newUntil?.toISOString() ?? null,
-      createdAt: item.createdAt.toISOString(),
-      updatedAt: item.updatedAt.toISOString(),
+      newUntil: item.newUntil,
+      createdAt: item.createdAt,
+      updatedAt: item.updatedAt,
     })),
     createdAt: cat.createdAt.toISOString(),
     updatedAt: cat.updatedAt.toISOString(),
@@ -80,7 +47,7 @@ export default async function MenuSection({ lang }: { lang: string }) {
       <div className="relative overflow-hidden">
         <div
           aria-hidden="true"
-          className="absolute inset-0 z-0 pointer-events-none bg-primary opacity-10"
+          className="absolute inset-0 z-0 pointer-events-none bg-primary opacity-20"
           style={{
             WebkitMaskImage: "url(/zenzakan/images/background-menu.svg)",
             maskImage: "url(/zenzakan/images/background-menu.svg)",

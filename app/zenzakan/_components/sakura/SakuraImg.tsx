@@ -74,7 +74,7 @@ const items = Array.from({ length: 7 }).map((_, i) => {
     1,
   ];
 
-  const opacity = 0.14 + r(23) * 0.2;
+  const opacity = 1 + r(23) * 0.2;
 
   return {
     src: webpPetals[i % webpPetals.length],

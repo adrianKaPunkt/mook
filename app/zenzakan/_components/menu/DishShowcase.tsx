@@ -10,27 +10,27 @@ type Dish = {
 
 const dishes: Dish[] = [
   {
-    name: "Sushi Platter",
+    name: "",
     imageUrl: "/zenzakan/images/menu1.webp",
     scale: 0.95,
   },
   {
-    name: "Tempura Basket",
+    name: "",
     imageUrl: "/zenzakan/images/menu2.webp",
     scale: 1,
   },
   {
-    name: "Miso Soup",
+    name: "",
     imageUrl: "/zenzakan/images/menu3.webp",
     scale: 0.95,
   },
   {
-    name: "Ramen Bowl",
+    name: "",
     imageUrl: "/zenzakan/images/menu4.webp",
     scale: 1,
   },
   {
-    name: "Sashimi Selection",
+    name: "",
     imageUrl: "/zenzakan/images/menu5.webp",
     scale: 0.85,
   },
@@ -97,13 +97,17 @@ export default function DishShowcase() {
     }
 
     function getPos(t: number) {
+      const width = W();
       const x = W() * 0.08 + t * W() * 0.84;
-      const yTop = H() * (W() >= 1200 ? -0.18 : -0.08);
+      const yTop = H() * (width >= 1200 ? -0.18 : -0.08);
       const yBot = H() * 0.42;
       const y = yTop + (yBot - yTop) * 4 * t * (1 - t);
       const prox = 1 - Math.abs(t - 0.5) * 2;
-      const isWide = W() >= 1200;
-      const scale = (isWide ? 0.22 : 0.16) + Math.pow(Math.max(0, prox), 3) * (isWide ? 2.6 : 3);
+      const isWide = width >= 1200;
+      const isMobile = width < 768;
+      const baseScale = isWide ? 0.22 : isMobile ? 0.1 : 0.16;
+      const peakScale = isWide ? 2.6 : isMobile ? 1.85 : 2.45;
+      const scale = baseScale + Math.pow(Math.max(0, prox), 3) * peakScale;
       const fadeInStart = isWide ? 0.12 : 0.27;
       const fadeInEnd = isWide ? 0.22 : 0.35;
       const fadeOutStart = isWide ? 0.78 : 0.65;
@@ -213,7 +217,7 @@ export default function DishShowcase() {
   }, []);
 
   return (
-    <section className="relative w-full overflow-visible -mt-26" style={{ height: "820px" }}>
+    <section className="relative h-[540px] w-full overflow-visible -mt-16 sm:h-[680px] sm:-mt-20 lg:h-[820px] lg:-mt-26">
       {/* Masken */}
       <div className="absolute inset-0 pointer-events-none z-20" />
       <div className="absolute inset-0 pointer-events-none z-20" />

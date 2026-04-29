@@ -2,26 +2,15 @@
 
 import { useRef, useState } from "react";
 import MenuItemCard from "./MenuItemCard";
-
-type ItemProps = {
-  id: string;
-  name: string;
-  description_de: string | null;
-  description_en: string | null;
-  price: number;
-  imageUrl: string | null;
-  allergens: string[];
-  spiceLevel: number | null;
-  upgrades: unknown;
-  newUntil: string | null;
-  servingInfo: string | null;
-};
+import type { MenuItem } from "@/types";
+import AllergenPicker from "./AllergenPicker";
+import { allergens } from "@/data/allergen";
 
 type CategoryWithItems = {
   id: string;
   name_de: string;
   name_en: string;
-  items: ItemProps[];
+  items: MenuItem[];
 };
 
 export default function MenuTabs({
@@ -34,6 +23,9 @@ export default function MenuTabs({
   const locale = lang === "en" ? "en" : "de";
 
   const [activeTab, setActiveTab] = useState(categories[0]?.id ?? "");
+  const [selectedAllergens, setSelectedAllergens] = useState<string[]>(
+    allergens.map((allergen) => allergen.key),
+  );
   const scrollRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
   const hasMoved = useRef(false);
@@ -41,6 +33,18 @@ export default function MenuTabs({
   const scrollLeft = useRef(0);
 
   const activeCategory = categories.find((c) => c.id === activeTab);
+  const filteredItems =
+    activeCategory?.items.filter((item) =>
+      item.allergens.every((allergenKey) => selectedAllergens.includes(allergenKey)),
+    ) ?? [];
+
+  const toggleAllergen = (allergenKey: string) => {
+    setSelectedAllergens((current) =>
+      current.includes(allergenKey)
+        ? current.filter((selectedAllergen) => selectedAllergen !== allergenKey)
+        : [...current, allergenKey],
+    );
+  };
 
   const onPointerDown = (e: React.PointerEvent) => {
     if (!scrollRef.current) return;
@@ -63,7 +67,7 @@ export default function MenuTabs({
 
   return (
     <div className="zen-container">
-      <div className="sticky top-0 z-10 pb-4 relative border-t border-foreground/10 pt-10">
+      <div className="sticky top-0 z-10 pb-4 relative border-t border-foreground/10 pt-10 mb-8">
         <div
           ref={scrollRef}
           className="overflow-x-auto scrollbar cursor-grab active:cursor-grabbing select-none"
@@ -72,7 +76,7 @@ export default function MenuTabs({
           onPointerUp={onPointerUp}
           onPointerCancel={onPointerUp}
         >
-          <div className="flex gap-2 w-fit mx-auto px-8">
+          <div className="flex gap-2 w-fit lg:mx-auto lg:px-8">
             {categories.map((cat) => {
               const isActive = activeTab === cat.id;
               return (
@@ -81,7 +85,7 @@ export default function MenuTabs({
                   onClick={() => {
                     if (!hasMoved.current) setActiveTab(cat.id);
                   }}
-                  className={`group relative whitespace-nowrap px-5 py-2.5 text-lg tracking-[0.25em] uppercase transition-all duration-300 cursor-pointer rounded-full border ${
+                  className={`group relative whitespace-nowrap px-5 py-2.5 text-xl tracking-[0.25em] uppercase transition-all duration-300 cursor-pointer rounded-full border ${
                     isActive
                       ? "bg-primary border-primary text-foreground font-semibold"
                       : "border-foreground/80 text-foreground/80 hover:border-accent hover:text-accent"
@@ -94,20 +98,17 @@ export default function MenuTabs({
           </div>
         </div>
       </div>
-
-      {/* Category title */}
-      {activeCategory && (
-        <div className="mt-5 mb-10 text-center">
-          <h2 className="text-white/80 text-2xl md:text-4xl uppercase tracking-wide">
-            {locale === "de" ? activeCategory.name_de : activeCategory.name_en}
-          </h2>
-        </div>
-      )}
+      <AllergenPicker
+        className="mb-8 flex justify-center w-full items-center"
+        lang={locale}
+        selectedAllergens={selectedAllergens}
+        onToggleAllergen={toggleAllergen}
+      />
 
       {/* Items Grid */}
       {activeCategory && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          {activeCategory.items.map((item) => (
+          {filteredItems.map((item) => (
             <MenuItemCard key={item.id} item={item} locale={locale} />
           ))}
         </div>

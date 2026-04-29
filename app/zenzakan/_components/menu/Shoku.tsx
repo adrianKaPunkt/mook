@@ -50,7 +50,7 @@ const Shoku = () => {
     <span
       ref={ref}
       style={{ opacity: 0, filter: "drop-shadow(0 0 0px rgba(255,0,0,0.1))" }}
-      className="absolute top-32 inset-0 flex items-center justify-center text-[20rem] leading-none text-primary/50 select-none pointer-events-none"
+      className="absolute top-32 inset-0 flex items-center justify-center text-[20rem] leading-none text-primary/70 select-none pointer-events-none"
     >
       食
     </span>
