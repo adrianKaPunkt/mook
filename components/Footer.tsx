@@ -6,7 +6,7 @@ type FooterProps = {
 
 const Footer = ({ location }: FooterProps) => {
   return (
-    <div className="bg-zinc-950 text-white pt-20">
+    <div className="bg-zinc-900 text-white pt-20">
       <div className="mg-container grid grid-cols-1 lg:grid-cols-4 mb-8">
         <div>
           <h2 className="text-2xl font-heading uppercase tracking-tight">Mook Group</h2>
@@ -26,7 +26,7 @@ const Footer = ({ location }: FooterProps) => {
         </div>
         <div>
           <h2 className="text-2xl font-heading uppercase tracking-tight">Opening Hours</h2>
-          {location?.openingHours.map((oh, i) => (
+          {location?.openingHours?.map((oh, i) => (
             <p key={i} className="mt-4 text-lg opacity-80">
               {oh.days}: {oh.hours}
             </p>
