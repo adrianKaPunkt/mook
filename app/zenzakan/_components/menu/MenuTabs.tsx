@@ -112,7 +112,7 @@ export default function MenuTabs({
         </div>
       </div>
       <AllergenPicker
-        className="sticky top-0 mb-8 flex justify-center w-full overflow-x-auto items-center opacity-70"
+        className="mb-8 flex justify-center w-full overflow-x-auto items-center opacity-70"
         lang={locale}
         selectedAllergens={selectedAllergens}
         onToggleAllergen={toggleAllergen}

@@ -2,7 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { FileText } from "lucide-react";
-import MenuPDFModal from "./MenuPDFModal";
+import dynamic from "next/dynamic";
+
+const MenuPDFModal = dynamic(() => import("./MenuPDFModal"), { ssr: false });
 
 type Props = {
   locale: "de" | "en";

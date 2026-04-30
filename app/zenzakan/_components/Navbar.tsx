@@ -1,21 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import LocaleSwitcher from "./LocaleSwitcher";
+import { scrollToSection } from "@/lib/utils";
 
 export default function Navbar({ lang }: { lang: string }) {
   const [scrolled, setScrolled] = useState(false);
-  const navRef = useRef<HTMLElement>(null);
-
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    const href = e.currentTarget.getAttribute("href");
-    if (!href?.startsWith("#")) return;
-    e.preventDefault();
-    const target = document.querySelector(href);
-    if (!target) return;
-    const offset = navRef.current?.offsetHeight ?? 0;
-    window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: "smooth" });
-  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -25,7 +15,6 @@ export default function Navbar({ lang }: { lang: string }) {
 
   return (
     <header
-      ref={navRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${scrolled ? "bg-black/80 backdrop-blur-md border-b border-white/5" : ""}`}
     >
       <div className="mg-container flex items-center justify-between py-5">
@@ -40,21 +29,21 @@ export default function Navbar({ lang }: { lang: string }) {
         <nav className="hidden md:flex items-center gap-8">
           <a
             href="#menu"
-            onClick={handleNavClick}
+            onClick={scrollToSection}
             className="font-body text-white/60 hover:text-foreground text-md tracking-[0.15em] uppercase transition-colors"
           >
             {lang === "en" ? "Menu" : "Speisekarte"}
           </a>
           <a
             href="#about"
-            onClick={handleNavClick}
+            onClick={scrollToSection}
             className="font-body text-white/60 hover:text-foreground text-md tracking-[0.15em] uppercase transition-colors"
           >
             {lang === "en" ? "About" : "Über uns"}
           </a>
           <a
             href="#contact"
-            onClick={handleNavClick}
+            onClick={scrollToSection}
             className="font-body text-white/60 hover:text-foreground text-md tracking-[0.15em] uppercase transition-colors"
           >
             {lang === "en" ? "Contact" : "Kontakt"}
@@ -65,7 +54,7 @@ export default function Navbar({ lang }: { lang: string }) {
           <LocaleSwitcher lang={lang} />
           <a
             href="#reservation"
-            onClick={handleNavClick}
+            onClick={scrollToSection}
             className="font-body inline-flex items-center border border-primary bg-primary px-6 py-2.5 text-xs uppercase tracking-[0.2em] text-white transition hover:border-[#c1121f] hover:bg-[#c1121f]"
           >
             {lang === "en" ? "Reserve" : "Reservieren"}
