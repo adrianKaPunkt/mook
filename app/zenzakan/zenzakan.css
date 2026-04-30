@@ -26,49 +26,6 @@
   }
 }
 
-@property --zen-menu-border-angle {
-  syntax: "<angle>";
-  inherits: false;
-  initial-value: 0deg;
-}
-
-@layer components {
-  .zen-menu-item-card {
-    animation: zen-menu-shadow-pulse var(--menu-shadow-duration, 7s) ease-in-out
-      var(--menu-shadow-delay, 0s) infinite;
-    box-shadow: 0 0 var(--menu-shadow-blur-start, 18px)
-      rgb(200 162 74 / var(--menu-shadow-alpha-start, 0.16));
-    will-change: box-shadow;
-  }
-
-  .zen-menu-item-card::before {
-    content: "";
-    position: absolute;
-    inset: -1px;
-    pointer-events: none;
-    border-radius: inherit;
-    padding: 1px;
-    background: conic-gradient(
-      from -90deg,
-      rgb(122 0 0) 0deg var(--zen-menu-border-angle, 0deg),
-      transparent var(--zen-menu-border-angle, 0deg) 360deg
-    );
-    mask:
-      linear-gradient(#000 0 0) content-box,
-      linear-gradient(#000 0 0);
-    mask-composite: exclude;
-  }
-
-  .zen-menu-item-card:hover {
-    animation-play-state: paused;
-    box-shadow: 0 0 calc(var(--menu-shadow-blur-end, 36px) + 8px) rgb(200 162 74 / 0.34);
-  }
-
-  .zen-menu-item-card:hover::before {
-    animation: zen-menu-border-sweep 780ms ease-out forwards;
-  }
-}
-
 @keyframes zen-menu-shadow-pulse {
   0% {
     box-shadow: 0 0 var(--menu-shadow-blur-start, 0px)
@@ -94,16 +51,5 @@
 @keyframes zen-menu-border-sweep {
   to {
     --zen-menu-border-angle: 360deg;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .zen-menu-item-card {
-    animation: none;
-  }
-
-  .zen-menu-item-card:hover::before {
-    --zen-menu-border-angle: 360deg;
-    animation: none;
   }
 }

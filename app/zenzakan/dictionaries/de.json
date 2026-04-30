@@ -1,0 +1,21 @@
+{
+  "nav": {
+    "menu": "Speisekarte",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "reserve": "Reservieren"
+  },
+  "about": {
+    "title": "Über uns",
+    "description": "Als die Mook Group das Zenzakan 2009 eröffnete, läutete sie damit eine komplett neue Epoche im asiatischen Fine-Dining ein. Vergleichbar spektakuläre Locations fanden sich selbst in glamourösen Metropolen wie Dubai, Shanghai oder New York nur äußerst spärlich. Damit war klar, dass es der Mook Group wieder einmal eindrucksvoll gelungen war, die Standards in der deutschen Hospitality-Industrie völlig neu zu postulieren. Das Zenzakan wurde dementsprechend mit Lobpreisungen geradezu überhäuft. Aber auch kulinarisch konnte das Zenzakan auf Anhieb überzeugen. Beispielsweise ist es uns schon kurz nach der Eröffnung geglückt, den Titel für das beste ausländische Restaurant Deutschlands nach Frankfurt zu holen. Nun gehörte es allerdings noch nie zu den großen Stärken der Mook Group, sich arrogant auf den erreichten Lorbeeren auszuruhen. Wir haben deshalb kontinuierlich daran gearbeitet, das Zenzakan optisch und kulinarisch zu verbessern. Durch dieses unermüdliche Engagement ist es uns allerdings gelungen, noch heute die Benchmark für asiatisches Fine-Dining in Deutschland zu definieren. Nun aber genug in Superlativen geschwelgt. Ihr solltet euch nun am besten ein eigenes Bild vom Zenzakan machen! Ihr werdet sehr schnell feststellen, dass unsere geradezu euphorische Schilderung nur noch von der überwältigenden Realität übertroffen wird."
+  },
+  "menu": {
+    "title": "Speisekarte",
+    "dishes": "Gericht",
+    "dishes_plural": "Gerichte"
+  },
+  "geisha": {
+    "title": "Geisha Room",
+    "description": "Der Geisha Room ist ein burleskes Chambre séparée für gerade mal zwei Personen. Der intime Raum ist dekoriert mit sinnlicher Fotokunst, indirekter Beleuchtung und einer gemütlichen Récamière. Die bezaubernde Oase ist der perfekte Ort für ein romantisches Tête-à-tête. Besonders gerne werden Hochzeitanträge im Geisha Room gestellt."
+  }
+}

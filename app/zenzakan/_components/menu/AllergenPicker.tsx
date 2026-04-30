@@ -16,7 +16,7 @@ const AllergenPicker: React.FC<AllergenPickerProps> = ({
 }) => {
   return (
     <div className={className}>
-      <div className="flex w-max gap-5 overflow-x-auto scrollbar opac">
+      <div className="flex w-max gap-5 overflow-x-auto scrollbar opacity-35 hover:opacity-100">
         {allergens.map((allergen) => {
           const isSelected = selectedAllergens.includes(allergen.key);
           const name = lang === "de" ? allergen.name_de : allergen.name_en;

@@ -35,6 +35,7 @@ const HeroSection = () => {
         priority
         className="object-cover object-center opacity-70"
       />
+      <div className="absolute inset-0 bg-black/40" />
 
       <div className="relative z-10 grid min-h-screen grid-cols-1 lg:grid-cols-3">
         <div className="flex flex-col items-center justify-center px-6 text-center sm:px-12 lg:col-span-2 lg:px-20 z-30">

@@ -3,45 +3,13 @@ import type { CSSProperties } from "react";
 import { MenuItem, MenuUpgrade } from "@/types";
 import { allergenByKey } from "../../../../data/allergen";
 
-type ShadowStyle = CSSProperties & {
-  "--menu-shadow-duration": string;
-  "--menu-shadow-delay": string;
-  "--menu-shadow-blur-start": string;
-  "--menu-shadow-blur-end": string;
-  "--menu-shadow-alpha-start": string;
-  "--menu-shadow-alpha-end": string;
-};
-
-function seededValue(seed: string, salt: number) {
-  let hash = 2166136261 + salt;
-
-  for (let i = 0; i < seed.length; i++) {
-    hash ^= seed.charCodeAt(i);
-    hash = Math.imul(hash, 16777619);
-  }
-
-  return (hash >>> 0) / 4294967295;
-}
-
 export default function MenuItemCard({ item, locale }: { item: MenuItem; locale: "de" | "en" }) {
   const description = locale === "de" ? item.description_de : item.description_en;
   const isNew = item.newUntil ? new Date(item.newUntil) > new Date() : false;
   const upgrades = item.upgrades as MenuUpgrade[] | null;
-  const animationSeed = `${item.id}-${item.name}`;
-  const shadowStyle: ShadowStyle = {
-    "--menu-shadow-duration": `${14 + seededValue(animationSeed, 1) * 10}s`,
-    "--menu-shadow-delay": `${seededValue(animationSeed, 2) * -18}s`,
-    "--menu-shadow-blur-start": `${14 + seededValue(animationSeed, 3) * 8}px`,
-    "--menu-shadow-blur-end": `${30 + seededValue(animationSeed, 4) * 18}px`,
-    "--menu-shadow-alpha-start": `${0.12 + seededValue(animationSeed, 5) * 0.08}`,
-    "--menu-shadow-alpha-end": `${0.24 + seededValue(animationSeed, 6) * 0.12}`,
-  };
 
   return (
-    <div
-      className="zen-menu-item-card group relative border border-primary/50 rounded-2xl p-6 transition-all duration-300 hover:border-accent/50"
-      style={shadowStyle}
-    >
+    <div className="relative border border-t-primary px-8 py-12 transition-all duration-300 hover:border-accent/50">
       {/* New Badge */}
       {isNew && (
         <span className="absolute top-4 right-4 text-[9px] tracking-[0.2em] uppercase bg-[#b8960c] text-black px-2.5 py-1 rounded-full font-semibold">
@@ -67,7 +35,7 @@ export default function MenuItemCard({ item, locale }: { item: MenuItem; locale:
 
           {/* Description */}
           {description && (
-            <p className="text-accent text-md tracking-wide lg:text-lg leading-relaxed group-hover:saturate-150 transition-colors duration-300">
+            <p className="text-foreground/80 text-md tracking-wide lg:text-lg leading-relaxed group-hover:saturate-150 transition-colors duration-300">
               {description}
             </p>
           )}

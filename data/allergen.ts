@@ -86,7 +86,7 @@ export const allergens: Allergens[] = [
   {
     key: "SESAME",
     name_de: "Sesam",
-    name_en: "Sesame Seeds",
+    name_en: "Sesame",
     description_en: "Sesame seeds and products thereof",
     description_de: "Sesamsamen und daraus hergestellte Erzeugnisse",
     imageUrl: "/allergens/sesame.svg",

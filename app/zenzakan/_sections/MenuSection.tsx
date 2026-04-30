@@ -3,7 +3,7 @@ import { prisma } from "@/lib/prisma";
 import MenuTabs from "../_components/menu/MenuTabs";
 import { getDictionary, hasLocale } from "../dictionaries";
 import DishShowcase from "../_components/menu/DishShowcase";
-import Shoku from "../_components/menu/Shoku";
+import Title from "../_components/Title";
 import { MenueCategory } from "@/types";
 
 export default async function MenuSection({ lang }: { lang: string }) {
@@ -60,12 +60,7 @@ export default async function MenuSection({ lang }: { lang: string }) {
           }}
         />
 
-        <div className="relative z-10 py-24 text-center overflow-visible">
-          <Shoku />
-          <h1 className="relative uppercase text-white font-heading text-5xl md:text-7xl tracking-tight">
-            {dict.menu.title}
-          </h1>
-        </div>
+        <Title title={dict.menu.title} symbol="menu" />
 
         <div className="relative z-10">
           <DishShowcase />
