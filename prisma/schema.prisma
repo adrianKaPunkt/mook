@@ -49,6 +49,7 @@ model Location {
   email        String?
   imageUrl     String?
   openingHours Json?
+  menuPdfs     Json?   // { food?: string, wine?: string, ... }
 
   // Relationen
   categories Category[]

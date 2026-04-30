@@ -11,7 +11,6 @@ export default async function MenuSection({ lang }: { lang: string }) {
   const locale = hasLocale(lang) ? lang : "de";
   const slug = "zenzakan";
   const dict = await getDictionary(locale);
-  const menuPdfUrl = "/zenzakan/menu.pdf";
 
   const menu = await prisma.location.findUnique({
     where: { slug },
@@ -30,6 +29,9 @@ export default async function MenuSection({ lang }: { lang: string }) {
   });
 
   if (!menu || !menu.isActive) notFound();
+
+  const pdfs = menu.menuPdfs as Record<string, string> | null;
+  const menuPdfUrl = pdfs?.food ?? null;
 
   const categories = (menu.categories as MenueCategory[]).map((cat) => ({
     ...cat,
@@ -68,9 +70,11 @@ export default async function MenuSection({ lang }: { lang: string }) {
           <DishShowcase />
         </div>
       </div>
-      <div className="flex justify-center">
-        <MenuPDFButton locale={locale} menuPdfUrl={menuPdfUrl} />
-      </div>
+      {menuPdfUrl && (
+        <div className="flex justify-center">
+          <MenuPDFButton locale={locale} menuPdfUrl={menuPdfUrl} />
+        </div>
+      )}
       <MenuTabs categories={categories} lang={locale} />
     </section>
   );

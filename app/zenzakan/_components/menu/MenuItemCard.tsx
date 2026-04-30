@@ -8,7 +8,7 @@ export default function MenuItemCard({ item, locale }: { item: MenuItem; locale:
   const upgrades = item.upgrades as MenuUpgrade[] | null;
 
   return (
-    <div className="relative border border-t-primary px-8 py-12 transition-all duration-300 hover:border-accent/50">
+    <div className="relative border border-t-primary px-8 py-12 transition-all duration-300 hover:scale-102 group cursor-pointer">
       {/* New Badge */}
       {isNew && (
         <span className="absolute top-4 right-4 text-[9px] tracking-[0.2em] uppercase bg-[#b8960c] text-black px-2.5 py-1 rounded-full font-semibold">
