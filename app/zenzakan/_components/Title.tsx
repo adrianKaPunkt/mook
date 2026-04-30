@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AboutSymbol from "@/public/zenzakan/title/about.svg";
 import GeishaSymbol from "@/public/zenzakan/title/geisha.svg";
 import MenuSymbol from "@/public/zenzakan/title/menu.svg";
+import PrivateSymbol from "@/public/zenzakan/title/private.svg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,6 +15,7 @@ const titleSymbols: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
   about: AboutSymbol,
   geisha: GeishaSymbol,
   menu: MenuSymbol,
+  private: PrivateSymbol,
 };
 
 type TitleProps = {

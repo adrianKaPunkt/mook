@@ -14,6 +14,10 @@
     "dishes": "Dish",
     "dishes_plural": "Dishes"
   },
+  "privateDining": {
+    "title": "Private Dining",
+    "description": "Zenzakan, with its phenomenally fitted and furnished 2,000 square metres, is the ideal haven for any kind of event. Thanks to various rooms that can be interconnected all sorts of modular ways, countless constellations and event sizes are possible. This means we can organise virtually any type and size of event to perfection."
+  },
   "geisha": {
     "title": "Geisha Room",
     "description": "The Geisha Room is a burlesque chambre séparée that can just about accommodate two people. The intimate space is decorated with sensual photographic art, indirect lighting and an inviting chaise longue. The enchanting oasis is the perfect retreat for a romantic tête-à-tête. Marriage proposals are especially popular in the Geisha Room."
