@@ -1,25 +1,14 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import type { ComponentType, SVGProps } from "react";
 import gsap from "gsap";
+import type { TitleSymbol } from "@/public/zenzakan/title";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import AboutSymbol from "@/public/zenzakan/title/about.svg";
-import GeishaSymbol from "@/public/zenzakan/title/geisha.svg";
-import MenuSymbol from "@/public/zenzakan/title/menu.svg";
-import PrivateSymbol from "@/public/zenzakan/title/private.svg";
-
+import { titleSymbols } from "@/public/zenzakan/title";
 gsap.registerPlugin(ScrollTrigger);
 
-const titleSymbols: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
-  about: AboutSymbol,
-  geisha: GeishaSymbol,
-  menu: MenuSymbol,
-  private: PrivateSymbol,
-};
-
 type TitleProps = {
-  symbol?: string;
+  symbol?: TitleSymbol;
   title: string;
 };
 

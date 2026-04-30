@@ -13,6 +13,14 @@ export default function Navbar({ lang }: { lang: string }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const navItems = [
+    { id: "about", label: lang === "en" ? "About" : "Über uns" },
+    { id: "menu", label: lang === "en" ? "Menu" : "Speisekarte" },
+    { id: "private-dining", label: lang === "en" ? "Private Dining" : "Private Dining" },
+    { id: "geisha-room", label: lang === "en" ? "Geisha Room" : "Geisha Room" },
+    { id: "contact", label: lang === "en" ? "Contact" : "Kontakt" },
+  ];
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${scrolled ? "bg-black/80 backdrop-blur-md border-b border-white/5" : ""}`}
@@ -20,34 +28,26 @@ export default function Navbar({ lang }: { lang: string }) {
       <div className="mg-container flex items-center justify-between py-5">
         <a
           href="/zenzakan"
-          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
           className="font-heading text-foreground text-lg tracking-widest uppercase"
         >
           Zenzakan
         </a>
 
         <nav className="hidden md:flex items-center gap-8">
-          <a
-            href="#menu"
-            onClick={scrollToSection}
-            className="font-body text-white/60 hover:text-foreground text-md tracking-[0.15em] uppercase transition-colors"
-          >
-            {lang === "en" ? "Menu" : "Speisekarte"}
-          </a>
-          <a
-            href="#about"
-            onClick={scrollToSection}
-            className="font-body text-white/60 hover:text-foreground text-md tracking-[0.15em] uppercase transition-colors"
-          >
-            {lang === "en" ? "About" : "Über uns"}
-          </a>
-          <a
-            href="#contact"
-            onClick={scrollToSection}
-            className="font-body text-white/60 hover:text-foreground text-md tracking-[0.15em] uppercase transition-colors"
-          >
-            {lang === "en" ? "Contact" : "Kontakt"}
-          </a>
+          {navItems.map(({ id, label }) => (
+            <a
+              key={id}
+              href={`#${id}`}
+              onClick={scrollToSection}
+              className="font-body text-white/60 hover:text-foreground text-md tracking-[0.15em] uppercase transition-colors"
+            >
+              {label}
+            </a>
+          ))}
         </nav>
 
         <div className="hidden md:flex items-center gap-4">

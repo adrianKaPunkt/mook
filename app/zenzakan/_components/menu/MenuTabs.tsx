@@ -22,7 +22,7 @@ export default function MenuTabs({
 }) {
   const locale = lang === "en" ? "en" : "de";
 
-  const [activeTab, setActiveTab] = useState(categories[0]?.id ?? "");
+  const [activeTab, setActiveTab] = useState("");
   const [selectedAllergens, setSelectedAllergens] = useState<string[]>(
     allergens.map((allergen) => allergen.key),
   );
@@ -69,7 +69,7 @@ export default function MenuTabs({
   const selectTab = (categoryId: string) => {
     if (hasMoved.current) return;
 
-    setActiveTab(categoryId);
+    setActiveTab((prev) => (prev === categoryId ? "" : categoryId));
     requestAnimationFrame(() => {
       const tabTop = tabsSectionRef.current?.getBoundingClientRect().top ?? 0;
       // Only scroll back when the user has already scrolled past the tabs section.
@@ -111,12 +111,14 @@ export default function MenuTabs({
           </div>
         </div>
       </div>
-      <AllergenPicker
-        className="mb-8 flex justify-center w-full overflow-x-auto items-center opacity-70"
-        lang={locale}
-        selectedAllergens={selectedAllergens}
-        onToggleAllergen={toggleAllergen}
-      />
+      {activeTab && (
+        <AllergenPicker
+          className="mb-8 flex justify-center w-full overflow-x-auto items-center opacity-70"
+          lang={locale}
+          selectedAllergens={selectedAllergens}
+          onToggleAllergen={toggleAllergen}
+        />
+      )}
 
       {/* Items Grid */}
       {activeCategory && (

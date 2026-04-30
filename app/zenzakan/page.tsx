@@ -1,9 +1,12 @@
-import AboutSection from "./_sections/AboutSection";
-import GeishaRoomSection from "./_sections/GeishaRoomSection";
-import HeroSection from "./_sections/HeroSection";
-import MenuSection from "./_sections/MenuSection";
+import {
+  HeroSection,
+  AboutSection,
+  MenuSection,
+  PrivateDiningSection,
+  GeishaRoomSection,
+  ContactSection,
+} from "./_sections";
 import { cookies } from "next/headers";
-import PrivateDiningSection from "./_sections/PrivateDiningSection";
 
 export default async function ZenzakanPage() {
   const cookieStore = await cookies();
@@ -15,6 +18,7 @@ export default async function ZenzakanPage() {
       <MenuSection lang={lang} />
       <PrivateDiningSection lang={lang} />
       <GeishaRoomSection lang={lang} />
+      <ContactSection lang={lang} />
     </main>
   );
 }

@@ -47,7 +47,7 @@ export default async function MenuSection({ lang }: { lang: string }) {
   }));
 
   return (
-    <section id="menu" className="min-h-screen bg-zinc-950 pb-16">
+    <section id="menu" className="bg-zinc-950 pb-16">
       <div className="relative overflow-hidden">
         <div
           aria-hidden="true"
