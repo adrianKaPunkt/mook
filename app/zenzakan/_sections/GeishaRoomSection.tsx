@@ -9,7 +9,7 @@ const GeishaRoomSection = async ({ lang }: { lang: string }) => {
     <section id="geisha-room" className="min-h-screen bg-zinc-950 py-16">
       <Title symbol="geisha" title={dict.geisha.title} />
       <div className="mg-container">
-        <div className="w-[40%] mx-auto pt-50">
+        <div className="px-4 lg:w-[40%] mx-auto pt-50">
           <p className="text-foreground text-lg leading-9">{dict.geisha.description}</p>
         </div>
       </div>

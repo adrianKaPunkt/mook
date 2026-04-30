@@ -47,7 +47,7 @@ const HeroSection = () => {
           </div>
 
           <motion.div
-            className="flex flex-col items-center"
+            className="mt-12 lg:mt-0 flex flex-col items-center"
             variants={container}
             initial="hidden"
             animate="visible"
