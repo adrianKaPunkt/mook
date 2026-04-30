@@ -1,5 +1,4 @@
 import Image from "next/image";
-import type { CSSProperties } from "react";
 import { MenuItem, MenuUpgrade } from "@/types";
 import { allergenByKey } from "../../../../data/allergen";
 

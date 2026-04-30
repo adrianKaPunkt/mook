@@ -5,11 +5,13 @@ import { getDictionary, hasLocale } from "../dictionaries";
 import DishShowcase from "../_components/menu/DishShowcase";
 import Title from "../_components/Title";
 import { MenueCategory } from "@/types";
+import MenuPDFButton from "../_components/menu/MenuPDFButton";
 
 export default async function MenuSection({ lang }: { lang: string }) {
   const locale = hasLocale(lang) ? lang : "de";
   const slug = "zenzakan";
   const dict = await getDictionary(locale);
+  const menuPdfUrl = "/zenzakan/menu.pdf";
 
   const menu = await prisma.location.findUnique({
     where: { slug },
@@ -65,6 +67,9 @@ export default async function MenuSection({ lang }: { lang: string }) {
         <div className="relative z-10">
           <DishShowcase />
         </div>
+      </div>
+      <div className="flex justify-center">
+        <MenuPDFButton locale={locale} menuPdfUrl={menuPdfUrl} />
       </div>
       <MenuTabs categories={categories} lang={locale} />
     </section>
