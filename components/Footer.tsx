@@ -1,4 +1,5 @@
 import type { Location } from "@/types";
+import FooterLogos from "./FooterLogos";
 
 type FooterProps = {
   location?: Location;
@@ -24,7 +25,7 @@ const Footer = ({ location }: FooterProps) => {
           <p className="mt-2 text-lg opacity-80">{location?.phone}</p>
           <p className="mt-2 text-lg opacity-80">{location?.email}</p>
         </div>
-        <div>
+        <div className="text-right">
           <h2 className="text-2xl font-heading uppercase tracking-tight">Opening Hours</h2>
           {location?.openingHours?.map((oh, i) => (
             <p key={i} className="mt-4 text-lg opacity-80">
@@ -32,13 +33,14 @@ const Footer = ({ location }: FooterProps) => {
             </p>
           ))}
         </div>
-        <div>
+        <div className="text-right">
           <h2 className="text-2xl font-heading uppercase tracking-tight">Follow Us</h2>
           <p className="mt-4 text-lg opacity-80">Instagram</p>
           <p className="mt-2 text-lg opacity-80">Facebook</p>
           <p className="mt-2 text-lg opacity-80">Twitter</p>
         </div>
       </div>
+      <FooterLogos />
       <div className="py-8 text-center text-sm opacity-60">
         © Copyright {new Date().getFullYear()} by Mook Group. All rights reserved.
       </div>
