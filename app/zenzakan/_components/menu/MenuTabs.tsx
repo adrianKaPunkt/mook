@@ -71,10 +71,12 @@ export default function MenuTabs({
 
     setActiveTab(categoryId);
     requestAnimationFrame(() => {
-      tabsSectionRef.current?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      const tabTop = tabsSectionRef.current?.getBoundingClientRect().top ?? 0;
+      // Only scroll back when the user has already scrolled past the tabs section.
+      // While DishShowcase is visible the tabs are below the viewport (tabTop > 0).
+      if (tabTop < 0) {
+        tabsSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     });
   };
 
