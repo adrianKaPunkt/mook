@@ -58,14 +58,6 @@ const HeroSection = () => {
               Erleben Sie die Kunst der asiatischen Küche.
             </motion.h1>
 
-            <motion.p
-              variants={item}
-              className="font-body font-light mb-10 max-w-md text-base leading-8 text-white/75 sm:text-lg"
-            >
-              Mit feinsten Zutaten, meisterhafter Zubereitung und einem Ambiente, das alle Sinne
-              berührt.
-            </motion.p>
-
             <motion.div
               variants={item}
               className="flex w-full flex-col justify-center gap-4 sm:w-auto sm:flex-row"

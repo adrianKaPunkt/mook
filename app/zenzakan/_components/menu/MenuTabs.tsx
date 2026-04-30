@@ -26,6 +26,7 @@ export default function MenuTabs({
   const [selectedAllergens, setSelectedAllergens] = useState<string[]>(
     allergens.map((allergen) => allergen.key),
   );
+  const tabsSectionRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
   const hasMoved = useRef(false);
@@ -65,9 +66,21 @@ export default function MenuTabs({
     isDragging.current = false;
   };
 
+  const selectTab = (categoryId: string) => {
+    if (hasMoved.current) return;
+
+    setActiveTab(categoryId);
+    requestAnimationFrame(() => {
+      tabsSectionRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+  };
+
   return (
-    <div className="mg-container">
-      <div className="sticky top-0 z-10 pb-4 relative pt-10 mb-8">
+    <div ref={tabsSectionRef} className="mg-container scroll-mt-24">
+      <div className="sticky top-16 bg-zinc-950 z-10 pb-4 relative pt-10 mb-8">
         <div
           ref={scrollRef}
           className="overflow-x-auto scrollbar cursor-grab active:cursor-grabbing select-none"
@@ -82,9 +95,7 @@ export default function MenuTabs({
               return (
                 <button
                   key={cat.id}
-                  onClick={() => {
-                    if (!hasMoved.current) setActiveTab(cat.id);
-                  }}
+                  onClick={() => selectTab(cat.id)}
                   className={`group relative whitespace-nowrap px-5 py-2.5 text-xl tracking-[0.25em] uppercase transition-all duration-300 cursor-pointer rounded-full border ${
                     isActive
                       ? "bg-primary border-primary text-foreground font-semibold"

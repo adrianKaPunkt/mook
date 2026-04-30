@@ -47,7 +47,7 @@ export default async function MenuSection({ lang }: { lang: string }) {
       <div className="relative overflow-hidden">
         <div
           aria-hidden="true"
-          className="absolute inset-0 z-0 pointer-events-none bg-primary opacity-20"
+          className="absolute inset-0 z-0 pointer-events-none bg-primary opacity-10"
           style={{
             WebkitMaskImage: "url(/zenzakan/images/background-menu.svg)",
             maskImage: "url(/zenzakan/images/background-menu.svg)",
