@@ -11,8 +11,9 @@ const container = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.5,
+      staggerChildren: 1.5,
+      delayChildren: 1.5,
+      delay: 3,
     },
   },
 };
