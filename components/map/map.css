@@ -1,7 +1,9 @@
-.map-svg path {
+.map-svg path,
+.map-svg polyline,
+.map-svg line {
   stroke-dasharray: 3000;
   stroke-dashoffset: 3000;
-  animation: map-draw 7.8s ease forwards;
+  animation: map-draw 5.8s ease forwards;
 }
 
 /* Stations */
