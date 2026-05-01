@@ -50,7 +50,7 @@ const LogoKatana = ({ className, delay }: LogoKatanaProps) => {
       <div className="relative w-full h-full cursor-pointer">
         <Image
           src="/zenzakan/logo/katana-o.webp"
-          alt="Katana gezogen"
+          alt="Katana blade"
           sizes="20vw"
           fill
           className={`object-contain transition-transform duration-2000 ease-out ${
@@ -60,7 +60,7 @@ const LogoKatana = ({ className, delay }: LogoKatanaProps) => {
         />
         <Image
           src="/zenzakan/logo/katana-u.webp"
-          alt="Katana Scheide"
+          alt="Katana"
           sizes="20vw"
           fill
           priority

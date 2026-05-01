@@ -1,3 +1,4 @@
+import { MapCard } from "@/components/map/MapCard";
 import Title from "../_components/Title";
 import { getDictionary, hasLocale } from "../dictionaries";
 
@@ -11,6 +12,9 @@ const ContactSection = async ({ lang }: { lang: string }) => {
       <div className="mg-container">
         <div className="px-4 lg:w-[40%] mx-auto pt-50">
           <p className="text-foreground text-lg leading-9"></p>
+        </div>
+        <div className="grid lg:grid-cols-2">
+          <MapCard />
         </div>
       </div>
     </section>

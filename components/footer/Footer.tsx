@@ -45,7 +45,9 @@ const Footer = ({ location, dict, lang = "de" }: FooterProps) => {
             {location?.zip} {location?.city}
           </p>
           <p className="mt-4 text-lg opacity-80">{location?.phone}</p>
-          <p className="mt-4 text-lg opacity-80">{location?.email}</p>
+          <a href={`mailto:${location?.email}`} className="mt-4 footerNav block">
+            {location?.email}
+          </a>
           <a
             className="footerNav mt-4 block"
             href="https://www.sevenrooms.com/explore/zenzakan/reservations/create/search?venues=franziska%2Civoryclub%2Cmonamiemaxi%2Cmsteakhouse%2Czenzakan"
