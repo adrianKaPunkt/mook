@@ -29,6 +29,61 @@
   },
   "privacyModal": {
     "title": "Privacy Policy",
-    "close": "Close"
+    "close": "Close",
+    "one": {
+      "title": "1. Name and contact details of the controller",
+      "content1": "This privacy policy applies to the data processing by: Mook-Group",
+      "content2": "For M-Steakhouse, Surf'N Turf, Mon Amie Maxi:\nCM Hospitality GmbH\nRegistration court: Local Court of Frankfurt am Main\nRegistration number: HRB 91837, VAT ID: DE 279033283\nManaging Director: Christian Mook\nInternet: www.mook-group.de",
+      "content3": "For Zenzakan, The Ivory Club:\nAmerican Food Corporation Deutschland GmbH\nRegistration court: Local Court of Frankfurt am Main\nRegistration number: HRB 49929, VAT ID: DE 196703610\nManaging Director: Christian Mook\nInternet: www.mook-group.de"
+    },
+    "two": {
+      "title": "2. Collection and Storage of Personal Data as Well as Purpose and Nature of Their Use",
+      "content1": "a) When visiting the website",
+      "content2": "When you visit our website www.mook-group.de, information is automatically sent to the server of our website by the browser on your device. This information is temporarily stored in a so-called log file. The following information is collected without your intervention and stored until it is automatically deleted:",
+      "content3": "•  IP address of the requesting computer,\n•  Date and time of access,\n•  Name and URL of the requested file,\n•  Website from which the access originates (referrer URL),\n•  Used browser and possibly the operating system of your computer as well as the name of your access provider.",
+      "content4": "The aforementioned data is processed by us for the following purposes:",
+      "content5": "•  Ensuring a smooth connection setup of the website,\n•  Ensuring comfortable use of our website,\n•  Evaluating system security and stability as well as for further administrative purposes.",
+      "content6": "The legal basis for data processing is Art. 6 para. 1 sentence 1 lit. f DSGVO. Our legitimate interest follows from the purposes listed above for data collection. In no case do we use the collected data for the purpose of drawing conclusions about your person.",
+      "content7": "Furthermore, we do not use cookies or analysis tools on our site.",
+      "content8": "b) When registering for our newsletter",
+      "content9": "If you have given your express consent in accordance with Art. 6 para. 1 sentence 1 lit. a DSGVO (double opt-in procedure), we use your email address to regularly send you our newsletter. Providing an email address is sufficient to receive the newsletter.",
+      "content10": "You can unsubscribe at any time via a link at the end of each newsletter. Alternatively, you can also send your unsubscribe request at any time to info@mookgroup.de by email.",
+      "content11": "c) When using our contact form",
+      "content12": "If you have any questions of any kind, we offer you the possibility to contact us via a form provided on the website. Providing a valid email address is required so that we know who the inquiry is from and can answer it. Further information can be provided voluntarily.",
+      "content13": "The data processing for the purpose of contacting us is based on Art. 6 para. 1 sentence 1 lit. a DSGVO on the basis of your voluntarily given consent.",
+      "content14": "The personal data collected by us for the use of the contact form will be automatically deleted after your inquiry has been processed."
+    },
+    "three": {
+      "title": "3. Disclosure of Data",
+      "content1": "A transfer of your personal data to third parties for purposes other than those listed below does not take place.",
+      "content2": "We only share your personal data with third parties if:",
+      "content3": "•  You have given your express consent in accordance with Art. 6 para. 1 sentence 1 lit. a DSGVO,\n•  In the event that there is a legal obligation for disclosure in accordance with Art. 6 para. 1 sentence 1 lit. c DSGVO, as well as\n•  This is legally permissible and necessary for the processing of contractual relationships with you in accordance with Art. 6 para. 1 sentence 1 lit. b DSGVO:"
+    },
+    "four": {
+      "title": "4. Rights of the Data Subject",
+      "content1": "You have the right to:",
+      "content2": "•  Request information in accordance with Art. 15 DSGVO about your personal data processed by us. In particular, you may request information about the purposes of processing, the category of personal data, the categories of recipients to whom your data has been or will be disclosed, the planned storage period, the existence of a right to rectification, deletion, restriction of processing or objection, the existence of a right to lodge a complaint, and the origin of your data, insofar as this was not collected by us;",
+      "content3": "•  Request correction of inaccurate or completion of your stored personal data without delay in accordance with Art. 16 DSGVO;",
+      "content4": "•  Request deletion of your stored personal data in accordance with Art. 17 DSGVO, unless the processing is necessary to exercise the right to freedom of expression and information, to fulfill a legal obligation, for reasons of public interest or to assert, exercise or defend legal claims;",
+      "content5": "•  Request restriction of the processing of your personal data in accordance with Art. 18 DSGVO, if the accuracy of the data is contested by you, the processing is unlawful but you oppose its deletion and we no longer need the data but you need it to assert, exercise or defend legal claims, or you have objected to the processing in accordance with Art. 21 DSGVO;",
+      "content6": "•  Receive your personal data that you have provided to us in a structured, commonly used and machine-readable format or request the transfer to another controller in accordance with Art. 20 DSGVO;",
+      "content7": "•  Complain to a supervisory authority in accordance with Art. 77 DSGVO. In general, you can contact the supervisory authority of your usual place of residence or workplace or our business location for this purpose.",
+      "content8": "•  Revoke your consent at any time in accordance with Art. 7 para. 3 DSGVO. This means we may no longer continue the data processing based on this consent going forward, and",
+      "content9": "•  Object to the processing of your personal data in accordance with Art. 21 DSGVO, if there are reasons arising from your particular situation or if the objection is directed against direct advertising. In the latter case, you have a general right of objection that we will implement without you having to specify a particular situation."
+    },
+    "five": {
+      "title": "5. Right to Object",
+      "content1": "If your personal data is processed on the basis of legitimate interests in accordance with Art. 6 para. 1 sentence 1 lit. f DSGVO, you have the right to object to the processing of your personal data at any time in accordance with Art. 21 DSGVO, if there are reasons for this that arise from your particular situation or if the objection is directed against direct advertising. In the latter case, you have a general right of objection that we will implement without you having to specify a particular situation.",
+      "content2": "If you wish to exercise your right to object, an email to info@mook-group.de is sufficient."
+    },
+    "six": {
+      "title": "6. Data Security",
+      "content1": "We use the widely used SSL (Secure Socket Layer) procedure during your website visit, in conjunction with the highest level of encryption supported by your browser — typically 256-bit encryption. If your browser does not support 256-bit encryption, we fall back on 128-bit v3 technology instead. You can tell whether an individual page of our website is being transmitted in encrypted form by the closed padlock symbol in the lower status bar of your browser.",
+      "content2": "In addition, we use appropriate technical and organisational security measures to protect your data against accidental or intentional manipulation, partial or complete loss, destruction, or unauthorised access by third parties. Our security measures are continuously improved in line with technological developments."
+    },
+    "seven": {
+      "title": "7. Currency and Amendment of this Privacy Policy",
+      "content1": "This privacy policy is currently valid and was last updated in May 2018. As our website and the services offered through it continue to develop, or due to changes in legal or regulatory requirements, it may become necessary to amend this privacy policy. The current version of the privacy policy can be accessed and printed at any time on the website at https://www.mookgroup.de or via the direct link at https://www.mook-group.de/main/datenschutzerklaerung.pdf."
+    }
   }
 }

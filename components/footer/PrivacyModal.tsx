@@ -50,8 +50,76 @@ const PrivacyModal = ({ dict, triggerLabel }: Props) => {
             </div>
 
             {/* Content */}
-            <div className="px-6 py-8 space-y-6 text-foreground/80 text-sm leading-relaxed">
-              {/* Inhalt folgt */}
+            <div className="px-6 py-8 space-y-6 text-foreground/80 text-sm leading-relaxed whitespace-pre-wrap">
+              <section>
+                <h2 className="font-heading uppercase tracking-widest text-foreground mb-2">
+                  {dict.one.title}
+                </h2>
+                <p className="mt-2">{dict.one.content1}</p>
+                <p className="mt-2">{dict.one.content2}</p>
+                <p className="mt-2">{dict.one.content3}</p>
+              </section>
+              <section>
+                <h2 className="font-heading uppercase tracking-widest text-foreground mb-2">
+                  {dict.two.title}
+                </h2>
+                <p className="mt-2">{dict.two.content1}</p>
+                <p className="mt-2 pl-3">{dict.two.content2}</p>
+                <p className="mt-2 pl-3">{dict.two.content3}</p>
+                <p className="mt-2 pl-3">{dict.two.content4}</p>
+                <p className="mt-2 pl-3">{dict.two.content5}</p>
+                <p className="mt-2 pl-3">{dict.two.content6}</p>
+                <p className="mt-2 pl-3">{dict.two.content7}</p>
+                <p className="mt-2">{dict.two.content8}</p>
+                <p className="mt-2 pl-3">{dict.two.content9}</p>
+                <p className="mt-2 pl-3">{dict.two.content10}</p>
+                <p className="mt-2">{dict.two.content11}</p>
+                <p className="mt-2 pl-3">{dict.two.content12}</p>
+                <p className="mt-2 pl-3">{dict.two.content13}</p>
+                <p className="mt-2 pl-3">{dict.two.content14}</p>
+              </section>
+              <section>
+                <h2 className="font-heading uppercase tracking-widest text-foreground mb-2">
+                  {dict.three.title}
+                </h2>
+                <p className="mt-2">{dict.three.content1}</p>
+                <p className="mt-2">{dict.three.content2}</p>
+                <p className="mt-2">{dict.three.content3}</p>
+              </section>
+              <section>
+                <h2 className="font-heading uppercase tracking-widest text-foreground mb-2">
+                  {dict.four.title}
+                </h2>
+                <p className="mt-2">{dict.four.content1}</p>
+                <p className="mt-2">{dict.four.content2}</p>
+                <p>{dict.four.content3}</p>
+                <p>{dict.four.content4}</p>
+                <p>{dict.four.content5}</p>
+                <p>{dict.four.content6}</p>
+                <p>{dict.four.content7}</p>
+                <p>{dict.four.content8}</p>
+                <p>{dict.four.content9}</p>
+              </section>
+              <section>
+                <h2 className="font-heading uppercase tracking-widest text-foreground mb-2">
+                  {dict.five.title}
+                </h2>
+                <p className="mt-2">{dict.five.content1}</p>
+                <p className="mt-2">{dict.five.content2}</p>
+              </section>
+              <section>
+                <h2 className="font-heading uppercase tracking-widest text-foreground mb-2">
+                  {dict.six.title}
+                </h2>
+                <p className="mt-2">{dict.six.content1}</p>
+                <p className="mt-2">{dict.six.content2}</p>
+              </section>
+              <section>
+                <h2 className="font-heading uppercase tracking-widest text-foreground mb-2">
+                  {dict.seven.title}
+                </h2>
+                <p className="mt-2">{dict.seven.content1}</p>
+              </section>
             </div>
           </div>
         </div>

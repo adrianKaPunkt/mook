@@ -99,7 +99,7 @@ export default function MenuItemCard({ item, locale }: { item: MenuItem; locale:
 
         {/* Price */}
         <div className="text-right shrink-0 pt-0.5">
-          <div className="text-foreground font-light text-xl lg:text-3xl tabular-nums leading-none">
+          <div className="text-foreground font-light text-xl lg:text-2xl tabular-nums leading-none">
             {Number(item.price).toFixed(2)}
           </div>
           <div className="text-foreground/60 text-xs mt-0.5">EUR</div>
