@@ -82,7 +82,7 @@ export default function MenuTabs({
 
   return (
     <div ref={tabsSectionRef} className="mg-container scroll-mt-24">
-      <div className="sticky top-16 bg-zinc-950 z-10 pb-4 relative pt-10 mb-8">
+      <div className="sticky top-16 bg-zinc-950 z-10 pb-4 relative pt-10 mb-4 lg:mb-8">
         <div
           ref={scrollRef}
           className="overflow-x-auto scrollbar cursor-grab active:cursor-grabbing select-none"
@@ -122,7 +122,7 @@ export default function MenuTabs({
 
       {/* Items Grid */}
       {activeCategory && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-8">
           {filteredItems.map((item) => (
             <MenuItemCard key={item.id} item={item} locale={locale} />
           ))}

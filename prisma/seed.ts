@@ -21,10 +21,20 @@ async function main() {
       country: "Deutschland",
       email: "info@zenzakan.de",
       phone: "+49 69 97086908",
-      openingHours: [
-        { days: "Mo – Fr", hours: "12:00 – 15:00 & 18:00 – 00:00" },
-        { days: "Sa – So", hours: "12:00 – 00:00" },
-      ],
+      openingHours: {
+        de: [
+          { days: "Mo – Fr", hours: "12:00 – 15:00 & 18:00 – 00:00" },
+          { days: "Sa – So", hours: "12:00 – 00:00" },
+        ],
+        en: [
+          { days: "Mon – Fri", hours: "12:00 – 3:00 pm & 6:00 pm – midnight" },
+          { days: "Sat – Sun", hours: "12:00 – midnight" },
+        ],
+      },
+      socialLinks: {
+        instagram: "https://www.instagram.com/zenzakan_frankfurt/",
+        facebook: "https://www.facebook.com/zenzakan/",
+      },
     },
     create: {
       name: "Zenzakan",
@@ -36,10 +46,20 @@ async function main() {
       phone: "+49 69 97086908",
       slug: "zenzakan",
       sortOrder: 1,
-      openingHours: [
-        { days: "Mo – Fr", hours: "12:00 – 15:00 & 18:00 – 00:00" },
-        { days: "Sa – So", hours: "12:00 – 00:00" },
-      ],
+      openingHours: {
+        de: [
+          { days: "Mo – Fr", hours: "12:00 – 15:00 & 18:00 – 00:00" },
+          { days: "Sa – So", hours: "12:00 – 00:00" },
+        ],
+        en: [
+          { days: "Mon – Fri", hours: "12:00 – 3:00 pm & 6:00 pm – midnight" },
+          { days: "Sat – Sun", hours: "12:00 – midnight" },
+        ],
+      },
+      socialLinks: {
+        instagram: "https://www.instagram.com/zenzakan_frankfurt/",
+        facebook: "https://www.facebook.com/zenzakan/",
+      },
     },
   });
 

@@ -1,0 +1,31 @@
+{
+  "footer": {
+    "voucher": "Gutschein",
+    "events": "Veranstaltungen",
+    "press": "Presse",
+    "jobs": "Jobs",
+    "imprint": "Impressum",
+    "privacy": "Datenschutz",
+    "openingHours": "Öffnungszeiten",
+    "followUs": "Folge uns",
+    "allRightsReserved": "Alle Rechte vorbehalten."
+  },
+  "imprintModal": {
+    "title": "Impressum",
+    "close": "Schließen",
+    "anliegen": "Für allgemine Anliegen",
+    "geschaeftsfuehrer": "Geschäftsführer",
+    "registereintrag": "Registereintrag",
+    "registergericht": "Registergericht",
+    "registernummer": "Registernummer",
+    "ustId": "Umsatzsteuer-ID",
+    "ustIdText": "Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:",
+    "monAmie": "Für die Restaurants: M-Steakhouse & Mon Amie Maxi",
+    "zenzakan": "Für die Restaurants Zenzakan & The Ivory Club",
+    "franziska": "Für das Restaurant Franziska"
+  },
+  "privacyModal": {
+    "title": "Datenschutz",
+    "close": "Schließen"
+  }
+}

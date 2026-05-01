@@ -13,9 +13,14 @@ export type Location = {
   imageUrl?: string;
   isActive: boolean;
   openingHours?: {
-    days: string;
-    hours: string;
-  }[];
+    de: { days: string; hours: string }[];
+    en: { days: string; hours: string }[];
+  };
+  socialLinks?: {
+    instagram?: string;
+    facebook?: string;
+    twitter?: string;
+  };
 };
 
 export type MenuItem = {

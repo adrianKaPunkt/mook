@@ -48,7 +48,8 @@ model Location {
   phone        String?
   email        String?
   imageUrl     String?
-  openingHours Json?
+  openingHours Json?   // { de: [{days, hours}], en: [{days, hours}] }
+  socialLinks  Json?   // { instagram?: string, facebook?: string, twitter?: string }
   menuPdfs     Json?   // { food?: string, wine?: string, ... }
 
   // Relationen

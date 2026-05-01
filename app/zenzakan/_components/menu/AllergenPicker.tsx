@@ -40,7 +40,7 @@ const AllergenPicker: React.FC<AllergenPickerProps> = ({
                 alt=""
                 width={30}
                 height={30}
-                className={`size-16 transition-all duration-300 ${
+                className={`size-10 lg:size-16 transition-all duration-300 ${
                   isSelected ? "invert hover:invert-0" : "invert"
                 }`}
               />

@@ -1,0 +1,34 @@
+{
+  "footer": {
+    "voucher": "Voucher",
+    "events": "Events",
+    "press": "Press",
+    "jobs": "Jobs",
+    "imprint": "Legal Notice",
+    "privacy": "Privacy",
+    "openingHours": "Opening Hours",
+    "followUs": "Follow Us",
+    "allRightsReserved": "All rights reserved."
+  },
+  "imprintModal": {
+    "title": "Legal Notice",
+    "close": "Close",
+    "anliegen": "Information pursuant to § 5 TMG",
+    "vertreten": "Represented by",
+    "geschaeftsfuehrer": "Managing Director",
+    "kontakt": "Contact",
+    "registereintrag": "Register Entry",
+    "registergericht": "Registration Court",
+    "registernummer": "Registration Number",
+    "ustId": "VAT ID",
+    "ustIdText": "VAT identification number pursuant to § 27a of the German Value Added Tax Act:",
+    "verantwortlich": "Responsible for content (§ 55 para. 2 RStV)",
+    "monAmie": "For the restaurants: M-Steakhouse & Mon Amie Maxi",
+    "zenzakan": "For the restaurants Zenzakan & The Ivory Club",
+    "franziska": "For the restaurant Franziska"
+  },
+  "privacyModal": {
+    "title": "Privacy Policy",
+    "close": "Close"
+  }
+}
