@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import MapSvg from "./map.svg";
 import "./map.css";
 
@@ -36,9 +36,12 @@ function normalizeSvgId(id: string): MapKey | null {
 
 export function MapCard() {
   const [active, setActive] = useState<MapKey | null>(null);
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-120px" });
 
   return (
     <motion.div
+      ref={ref}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 0.8, y: 0 }}
       viewport={{ once: true, margin: "-120px" }}
@@ -55,7 +58,7 @@ export function MapCard() {
         }}
         onPointerLeave={() => setActive(null)}
       >
-        <MapSvg className="map-svg h-full w-full scale-[1.3] translate-x-6 -translate-y-4" />
+        <MapSvg className={`${inView ? "map-svg" : ""} h-full w-full scale-[1.3] translate-x-6 -translate-y-4`} />
 
         {active && (
           <div className="pointer-events-none absolute right-5 top-5 max-w-[240px] rounded-2xl border border-[#d4af37]/20 bg-black/75 p-4 text-[#d4af37] backdrop-blur-md">
