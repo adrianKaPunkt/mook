@@ -16,17 +16,21 @@ export function KeyholeRevealSection({ description }: Props) {
     offset: ["start start", "end end"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [0.65, 120]);
-  const redOpacity = useTransform(scrollYProgress, [0.1, 0.9], [1, 0]);
-  const maskOpacity = useTransform(scrollYProgress, [0.44, 0.78], [1, 0]);
-  const roomOpacity = useTransform(scrollYProgress, [0.6, 0.9], [0, 1]);
-  const textOpacity = useTransform(scrollYProgress, [0.93, 0.99], [0, 1]);
+  // t: 0→1 während Eingang, 1 während Stay, 1→0 während Ausgang
+  // Dadurch laufen die Original-Commit-Werte auf t und kehren sich beim Ausgang automatisch um
+  const t = useTransform(scrollYProgress, [0, 0.4, 0.6, 1.0], [0, 1, 1, 0]);
+
+  const scale      = useTransform(t, [0, 1],         [0.65, 120]);
+  const redOpacity = useTransform(t, [0.1, 0.9],     [1, 0]);
+  const maskOpacity = useTransform(t, [0.44, 0.78],  [1, 0]);
+  const roomOpacity = useTransform(t, [0.6, 0.9],    [0, 1]);
+  const textOpacity = useTransform(t, [0.93, 0.99],  [0, 1]);
 
   return (
-    <section ref={sectionRef} className="relative h-[300vh]">
+    <section ref={sectionRef} className="relative h-[600vh]">
       <div className="sticky top-0 flex h-screen items-center justify-center overflow-hidden">
         {/* Geisha Room – blendet ein wenn Maske verschwindet */}
-        <motion.div className="absolute inset-0 z-0" style={{ opacity: roomOpacity }}>
+        <motion.div className="absolute inset-0 z-0 opacity-0" style={{ opacity: roomOpacity }}>
           <Image src="/zenzakan/images/geisha-room.jpg" alt="" fill className="object-cover" />
           <div className="absolute inset-0 bg-black/30" />
         </motion.div>
@@ -41,7 +45,7 @@ export function KeyholeRevealSection({ description }: Props) {
           </motion.div>
         </motion.div>
 
-        {/* Schloss PNG – blendet gemeinsam mit der Maske aus */}
+        {/* Schloss PNG */}
         <motion.div style={{ scale, opacity: maskOpacity }} className="relative z-20">
           <Image
             src="/zenzakan/images/keyhole.png"
