@@ -51,6 +51,107 @@
   opacity: 0.4;
 }
 
+/* Main */
+#map_svg__main {
+  cursor: pointer;
+}
+
+#map_svg__taunusanlage {
+  transition: stroke-width 0.4s ease;
+}
+#map_svg__taunusanlage:hover {
+  stroke-width: 70px;
+}
+
+#map_svg__neueMainzer {
+  transition: stroke-width 0.4s ease;
+}
+#map_svg__neueMainzer:hover {
+  stroke-width: 55px;
+}
+
+#map_svg__bockenheimerLandstr {
+  transition: stroke-width 0.4s ease;
+}
+#map_svg__bockenheimerLandstr:hover {
+  stroke-width: 45px;
+}
+
+#map_svg__bockenheimerAnlage {
+  transition: stroke-width 0.4s ease;
+}
+#map_svg__bockenheimerAnlage:hover {
+  stroke-width: 45px;
+}
+
+/* Side */
+#map_svg__side {
+  cursor: pointer;
+}
+
+#map_svg__kettenhofweg {
+  transition: stroke-width 0.4s ease;
+}
+#map_svg__kettenhofweg:hover {
+  stroke-width: 30px;
+}
+
+#map_svg__niedenau {
+  transition: stroke-width 0.4s ease;
+}
+#map_svg__niedenau:hover {
+  stroke-width: 30px;
+}
+
+#map_svg__guiollettstr {
+  transition: stroke-width 0.4s ease;
+}
+#map_svg__guiollettstr:hover {
+  stroke-width: 30px;
+}
+
+#map_svg__klueberstr {
+  transition: stroke-width 0.4s ease;
+}
+#map_svg__klueberstr:hover {
+  stroke-width: 10px;
+}
+
+#map_svg__opernplatz {
+  transition: stroke-width 0.4s ease;
+}
+#map_svg__opernplatz:hover {
+  stroke-width: 30px;
+}
+
+#map_svg__fressgasse {
+  transition: stroke-width 0.4s ease;
+}
+#map_svg__fressgasse:hover {
+  stroke-width: 30px;
+}
+
+#map_svg__goethestr {
+  transition: stroke-width 0.4s ease;
+}
+#map_svg__goethestr:hover {
+  stroke-width: 25px;
+}
+
+#map_svg__junghofstr {
+  transition: stroke-width 0.4s ease;
+}
+#map_svg__junghofstr:hover {
+  stroke-width: 30px;
+}
+
+#map_svg__kleineHochstr {
+  transition: stroke-width 0.4s ease;
+}
+#map_svg__kleineHochstr:hover {
+  stroke-width: 12px;
+}
+
 @keyframes map-draw {
   to {
     stroke-dashoffset: 0;

@@ -13,7 +13,7 @@ export default async function ZenzakanPage() {
   const lang = cookieStore.get("NEXT_LOCALE")?.value ?? "de";
   return (
     <main className="min-h-screen">
-      <HeroSection />
+      <HeroSection lang={lang} />
       <AboutSection lang={lang} />
       <MenuSection lang={lang} />
       <PrivateDiningSection lang={lang} />

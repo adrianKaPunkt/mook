@@ -68,7 +68,7 @@ const Title = ({ symbol, title }: TitleProps) => {
           )}
         </span>
       </span>
-      <h1 className="relative uppercase text-white font-heading text-5xl md:text-7xl tracking-tight">
+      <h1 className="relative uppercase text-white font-heading font-light text-5xl md:text-7xl tracking-tight">
         {title}
       </h1>
     </div>
