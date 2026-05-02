@@ -17,7 +17,7 @@ function rnd(seed: number, offset = 0): number {
   return x - Math.floor(x);
 }
 
-const items = Array.from({ length: 80 }).map((_, i) => {
+const items = Array.from({ length: 50 }).map((_, i) => {
   const r = (o: number) => rnd(i, o);
 
   // Group petals into wind gusts (5 per gust) so they arrive in bursts

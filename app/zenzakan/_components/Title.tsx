@@ -24,10 +24,10 @@ const Title = ({ symbol, title }: TitleProps) => {
       el,
       { opacity: 0, scale: 0.92 },
       {
-        opacity: 0.6,
+        opacity: 0.7,
         scale: 1,
-        delay: 1,
-        duration: 1.2,
+        delay: 0.2,
+        duration: 0.8,
         ease: "power2.out",
         scrollTrigger: {
           trigger: el,
@@ -36,8 +36,8 @@ const Title = ({ symbol, title }: TitleProps) => {
         },
         onComplete: () => {
           gsap.to(el, {
-            filter: "drop-shadow(0 0 88px rgba(255,0,0,0.8))",
-            duration: 3,
+            filter: "drop-shadow(0 0 88px rgba(255,0,0,0.5))",
+            duration: 2,
             ease: "sine.inOut",
             yoyo: true,
             repeat: -1,

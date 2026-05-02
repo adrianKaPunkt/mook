@@ -15,7 +15,7 @@ function rnd(seed: number, offset = 0): number {
   return x - Math.floor(x);
 }
 
-const items = Array.from({ length: 13 }).map((_, i) => {
+const items = Array.from({ length: 10 }).map((_, i) => {
   // Offset seed from Sakura.tsx so the two layers don't move in sync
   const r = (o: number) => rnd(i + 100, o);
 

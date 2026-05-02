@@ -23,6 +23,74 @@ const mapInfo = {
     title: "Deutsche Bank Türme",
     text: "Markanter Orientierungspunkt der Frankfurter Skyline.",
   },
+  opernplatz: {
+    title: "Opernplatz",
+    text: "",
+  },
+  goethestr: {
+    title: "Goethestraße",
+    text: "",
+  },
+  fressgasse: {
+    title: "Fressgasse",
+    text: "",
+  },
+  kettenhofweg: {
+    title: "Kettenhofweg",
+    text: "",
+  },
+  guiollettstr: {
+    title: "Guiollettstraße",
+    text: "Eingang Ivory Club - Valet Parking und Nebeneingang zum Zenzakan.",
+  },
+  junghofstr: {
+    title: "Junghofstraße",
+    text: "",
+  },
+  niedenau: {
+    title: "Niedenau",
+    text: "",
+  },
+  oberlindau: {
+    title: "Oberlindau",
+    text: "",
+  },
+  kleineHochstr: {
+    title: "Kleine Hochstraße",
+    text: "",
+  },
+  klueberstr: {
+    title: "Klüberstraße",
+    text: "",
+  },
+  kaiserhofstr: {
+    title: "Kaiserhofstraße",
+    text: "",
+  },
+  leerbachstr: {
+    title: "Leerbachstraße",
+    text: "",
+  },
+  grosseBockenheimer: {
+    title: "Große Bockenheimer Straße",
+    text: "",
+  },
+  bockenheimerLandstr: {
+    title: "Bockenheimer Landstraße",
+    text: "",
+  },
+  neueMainzer: {
+    title: "Neue Mainzer Straße",
+    text: "",
+  },
+  bockenheimerAnlage: {
+    title: "Bockenheimer Anlage",
+    text: "",
+  },
+  taunusanlage: {
+    title: "Taunusanlage",
+    text: "",
+  },
 };
 
 type MapKey = keyof typeof mapInfo;
@@ -31,6 +99,24 @@ function normalizeSvgId(id: string): MapKey | null {
   if (id.endsWith("sbahn")) return "sbahn";
   if (id.endsWith("alteOper")) return "alteOper";
   if (id.endsWith("deutscheBank")) return "deutscheBank";
+  if (id.endsWith("opernplatz")) return "opernplatz";
+  if (id.endsWith("goethestr")) return "goethestr";
+  if (id.endsWith("fressgasse")) return "fressgasse";
+  if (id.endsWith("kettenhofweg")) return "kettenhofweg";
+  if (id.endsWith("guiollettstr")) return "guiollettstr";
+  if (id.endsWith("junghofstr")) return "junghofstr";
+  if (id.endsWith("niedenau")) return "niedenau";
+  if (id.endsWith("oberlindau")) return "oberlindau";
+  if (id.endsWith("kleineHochstr")) return "kleineHochstr";
+  if (id.endsWith("klueberstr")) return "klueberstr";
+  if (id.endsWith("leerbachstr")) return "leerbachstr";
+  if (id.endsWith("kaiserhofstr")) return "kaiserhofstr";
+  if (id.endsWith("grosseBockenheimer")) return "grosseBockenheimer";
+  if (id.endsWith("bockenheimerLandstr")) return "bockenheimerLandstr";
+  if (id.endsWith("neueMainzer")) return "neueMainzer";
+  if (id.endsWith("bockenheimerAnlage")) return "bockenheimerAnlage";
+  if (id.endsWith("taunusanlage")) return "taunusanlage";
+
   return null;
 }
 
@@ -58,7 +144,9 @@ export function MapCard() {
         }}
         onPointerLeave={() => setActive(null)}
       >
-        <MapSvg className={`${inView ? "map-svg" : ""} h-full w-full scale-[1.3] translate-x-6 -translate-y-4`} />
+        <MapSvg
+          className={`${inView ? "map-svg" : ""} h-full w-full scale-[1.55] translate-x-6 -translate-y-4`}
+        />
 
         {active && (
           <div className="pointer-events-none absolute right-5 top-5 max-w-[240px] rounded-2xl border border-[#d4af37]/20 bg-black/75 p-4 text-[#d4af37] backdrop-blur-md">

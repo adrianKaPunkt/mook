@@ -46,21 +46,9 @@
   transform: scale(1.1);
 }
 
-.map-svg #zenzakan,
-.map-svg #zenzakan-marker {
-  opacity: 0;
-  transform-box: fill-box;
-  transform-origin: center;
-  animation:
-    landmark-in 0.8s ease forwards 1.9s,
-    marker-pulse 2.4s ease-in-out infinite 2.7s;
-}
-
-#map_svg__stations {
-  opacity: 0;
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: landmark-in 3.8s ease forwards 3.1s;
+/* Side markers */
+#map_svg__opernplatz {
+  opacity: 0.4;
 }
 
 @keyframes map-draw {

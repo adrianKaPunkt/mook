@@ -113,33 +113,27 @@
     </style>
   </defs>
   <g id="side">
-    <polyline id="kettenhofweg" class="st7" points="-26.15 507.41 164.84 584.72 321.63 577.89 462.69 543.63 488.84 482.4"/>
-    <polyline id="guiollettstr" class="st7" points="-15.77 710.27 131.86 742.32 457.96 783.32 483.71 812.47"/>
-    <polyline id="junghofstr" class="st7" points="1283.62 1131.03 711.54 923.49 519.16 855.03 483.71 814.74"/>
-    <polyline id="niedenau" class="st7" points="319.5 -12.22 295.85 100.98 204.54 369.65 131.86 742.32 23.46 999.84"/>
-    <path id="oberlindau" class="st7" d="M420.63-12.22l-18.19,107.72s-28.04,108.38-32.59,119.75-57.89,156.85-57.89,156.85"/>
-    <polyline id="ulmenstr" class="st7" points="140.21 -12.22 78 232.67 -32.59 694.23"/>
-    <line id="taunusanlage-kl" class="st7" x1="457.01" y1="1216.42" x2="332.06" y2="981.57"/>
-    <line id="opernplatz" class="st16" x1="837.47" y1="629.05" x2="639.66" y2="547.2"/>
-    <polyline id="klueberstr" class="st7" points="49.94 936.94 155.27 976.56 228.17 862.87 246.35 756.71"/>
-    <polyline id="goethestr" class="st12" points="1283.62 950.4 904.93 805.39 816.52 669.74"/>
-    <polyline id="fressgasse" class="st12" points="1283.62 790.74 1068.63 721.52 846.32 631.07"/>
-    <polyline id="neueSchlesingergasse" class="st16" points="916.91 1214.65 800.84 1049.43 784.17 1009.52 803.3 956.78"/>
-    <polyline id="kleineHochstr" class="st16" points="966.76 680.07 1009.01 540.13 991.21 486.52"/>
-    <polyline id="kaiserhofstr" class="st16" points="1068.63 721.52 1129.77 522.44 1108.04 457.44"/>
-    <polyline id="grosseBockenheimer" class="st16" points="1073.34 723.03 1086.82 775.58 1217.68 874.61 1283.62 896.34"/>
-    <polyline id="alteRothof" class="st16" points="1123.59 1072.98 1120.67 931.71 1151.13 824.24"/>
-    <path id="leerbachstr" class="st16" d="M795.2-11.26s44.34,311.66,54.92,318.21"/>
-    <polyline id="imTrutz" class="st16" points="996.51 -11.26 1015.91 45.93 1154.53 227.37"/>
+    <polyline id="kettenhofweg" data-map-item="kettenhofweg" class="st7" points="-26.15 507.41 164.84 584.72 321.63 577.89 462.69 543.63 488.84 482.4"/>
+    <polyline id="guiollettstr" data-map-item="guiollettstr" class="st7" points="-15.77 710.27 131.86 742.32 457.96 783.32 483.71 812.47"/>
+    <polyline id="junghofstr" data-map-item="junghofstr" class="st7" points="1283.62 1131.03 711.54 923.49 519.16 855.03 483.71 814.74"/>
+    <polyline id="niedenau" data-map-item="niedenau" class="st7" points="319.5 -12.22 295.85 100.98 204.54 369.65 131.86 742.32 23.46 999.84"/>
+    <path id="oberlindau" data-map-item="oberlindau" class="st7" d="M420.63-12.22l-18.19,107.72s-28.04,108.38-32.59,119.75-57.89,156.85-57.89,156.85"/>
+    <line id="opernplatz" data-map-item="opernplatz" class="st16" x1="837.47" y1="629.05" x2="639.66" y2="547.2"/>
+    <polyline id="klueberstr" data-map-item="klueberstr" class="st7" points="49.94 936.94 155.27 976.56 228.17 862.87 246.35 756.71"/>
+    <polyline id="goethestr" data-map-item="goethestr" class="st12" points="1283.62 950.4 904.93 805.39 816.52 669.74"/>
+    <polyline id="fressgasse" data-map-item="fressgasse" class="st12" points="1283.62 790.74 1068.63 721.52 846.32 631.07"/>
+    <polyline id="kleineHochstr" data-map-item="kleineHochstr" class="st16" points="966.76 680.07 1009.01 540.13 991.21 486.52"/>
+    <polyline id="kaiserhofstr" data-map-item="kaiserhofstr" class="st16" points="1068.63 721.52 1129.77 522.44 1108.04 457.44"/>
+    <polyline id="grosseBockenheimer" data-map-item="grosseBockenheimer" class="st16" points="1073.34 723.03 1086.82 775.58 1217.68 874.61 1283.62 896.34"/>
+    <path id="leerbachstr" data-map-item="leerbachstr" class="st16" d="M795.2-11.26s44.34,311.66,54.92,318.21"/>
     <path id="sofitel" class="st16" d="M983.41,481.8s-9.57-37.04-23.18-48.88-57.95-30.74-71.8-40.06-32.75-29.23-36.28-41.82-2.02-42.7-2.02-42.7"/>
-    <line id="zimmerweg" class="st16" x1="28.28" y1="1038.49" x2="131.51" y2="1178.91"/>
-    <circle id="kreisel" class="st16" cx="15.68" cy="1019.28" r="19.45"/>
+
   </g>
   <g id="main">
-    <path id="taunusanlage" class="st6" d="M102.32,1232.72s328.55-358.11,369.47-405.85,127.84-169.39,146.34-239.87,38.96-222.82,37.83-245.56-7.96-36.38-1.14-81.85,7.12-201.22-36.23-312.63"/>
-    <path id="bockenheimerLandstr" class="st10" d="M-44.34,159.54S439.96,449.43,478.61,469.89c38.65,20.46,149.28,73.74,149.28,73.74"/>
-    <path id="neueMainzer" class="st9" d="M765.98,1223.75s-88.42-166.23-95.49-182.4-17.19-30.39-12.28-43.96c7.13-19.69,18.43-31.65,29.46-44.97,19.08-23.04,103.58-229.89,118.23-261.22s67.16-128.83,82.86-147.57c18.19-21.7,55.58-48.48,109.64-58.58,36.34-6.79,263.24-66.69,297.6-89.43"/>
-    <path id="BockenheimerAnlage" class="st18" d="M660.66,320.8s120.93-7.81,132.52-8.57,52.66-7.56,105.82-1.26,156.71,16.12,184.93.76,48.88-51.65,55.93-62.48,145.12-215.16,145.12-215.16"/>
+    <path id="taunusanlage" data-map-item="taunusanlage" class="st6" d="M102.32,1232.72s328.55-358.11,369.47-405.85,127.84-169.39,146.34-239.87,38.96-222.82,37.83-245.56-7.96-36.38-1.14-81.85,7.12-201.22-36.23-312.63"/>
+    <path id="bockenheimerLandstr" data-map-item="bockenheimerLandstr" class="st10" d="M-44.34,159.54S439.96,449.43,478.61,469.89c38.65,20.46,149.28,73.74,149.28,73.74"/>
+    <path id="neueMainzer" data-map-item="neueMainzer" class="st9" d="M765.98,1223.75s-88.42-166.23-95.49-182.4-17.19-30.39-12.28-43.96c7.13-19.69,18.43-31.65,29.46-44.97,19.08-23.04,103.58-229.89,118.23-261.22s67.16-128.83,82.86-147.57c18.19-21.7,55.58-48.48,109.64-58.58,36.34-6.79,263.24-66.69,297.6-89.43"/>
+    <path id="bockenheimerAnlage" data-map-item="bockenheimerAnlage" class="st18" d="M660.66,320.8s120.93-7.81,132.52-8.57,52.66-7.56,105.82-1.26,156.71,16.12,184.93.76,48.88-51.65,55.93-62.48,145.12-215.16,145.12-215.16"/>
   </g>
   <g id="landmarks">
     <g id="deutscheBank" data-map-item="deutscheBank">
