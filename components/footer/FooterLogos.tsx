@@ -2,11 +2,13 @@
 
 import Image from "next/image";
 import type { ComponentType, SVGProps } from "react";
+import MookGroupSvg from "@/public/footer/mook-group.svg";
 import ZenzakanSvg from "@/public/footer/zenzakan.svg";
 import MSvg from "@/public/footer/m.svg";
 import MonAmieSvg from "@/public/footer/monamie.svg";
 import IvorySvg from "@/public/footer/ivory.svg";
 import FrabziskaSvg from "@/public/footer/franziska.svg";
+import MookMagSvg from "@/public/footer/mook-mag.svg";
 
 type LogoEntry = {
   Logo: ComponentType<SVGProps<SVGSVGElement>>;
@@ -21,6 +23,13 @@ type LogoEntry = {
 };
 
 const logos: LogoEntry[] = [
+  {
+    Logo: MookGroupSvg,
+    name: "Mook Group",
+    href: "https://mook-group.de",
+    HoverLogo: MookGroupSvg,
+    hoverClassName: "text-accent",
+  },
   {
     Logo: MSvg,
     name: "M-Steakhouse",
@@ -51,6 +60,13 @@ const logos: LogoEntry[] = [
     name: "Franziska",
     href: "https://mook-group.de/franziska",
     HoverLogo: FrabziskaSvg,
+    hoverClassName: "text-white",
+  },
+  {
+    Logo: MookMagSvg,
+    name: "Mook Magazin",
+    href: "https://mook-magazin.de",
+    HoverLogo: MookMagSvg,
     hoverClassName: "text-accent",
   },
 ];
@@ -63,7 +79,7 @@ export default function FooterLogos() {
           key={name}
           href={href}
           aria-label={name}
-          className="group relative inline-flex h-20 items-center justify-center"
+          className="group relative inline-flex h-17 items-center justify-center"
         >
           <Logo
             aria-hidden="true"

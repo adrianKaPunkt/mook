@@ -20,11 +20,11 @@ export function KeyholeRevealSection({ description }: Props) {
   // Dadurch laufen die Original-Commit-Werte auf t und kehren sich beim Ausgang automatisch um
   const t = useTransform(scrollYProgress, [0, 0.4, 0.6, 1.0], [0, 1, 1, 0]);
 
-  const scale      = useTransform(t, [0, 1],         [0.65, 120]);
-  const redOpacity = useTransform(t, [0.1, 0.9],     [1, 0]);
-  const maskOpacity = useTransform(t, [0.44, 0.78],  [1, 0]);
-  const roomOpacity = useTransform(t, [0.6, 0.9],    [0, 1]);
-  const textOpacity = useTransform(t, [0.93, 0.99],  [0, 1]);
+  const scale = useTransform(t, [0, 1], [0.65, 120]);
+  const redOpacity = useTransform(t, [0.1, 0.9], [1, 0]);
+  const maskOpacity = useTransform(t, [0.44, 0.78], [1, 0]);
+  const roomOpacity = useTransform(t, [0.6, 0.9], [0, 1]);
+  const textOpacity = useTransform(t, [0.93, 0.99], [0, 1]);
 
   return (
     <section ref={sectionRef} className="relative h-[600vh]">
@@ -63,33 +63,17 @@ export function KeyholeRevealSection({ description }: Props) {
           style={{ opacity: textOpacity }}
         >
           <div className="text-center max-w-xl px-8">
-            <p
-              className="text-[#b8960c] tracking-[0.4em] text-xs uppercase mb-4"
-              style={{ fontFamily: "Georgia, serif" }}
-            >
-              Zenzakan · Private Dining
-            </p>
-            <h2
-              className="text-white text-4xl md:text-5xl font-normal mb-6 leading-tight"
-              style={{ fontFamily: "Georgia, serif" }}
-            >
-              The Geisha Room
+            <p className="text-accent tracking-[0.4em] text-xs uppercase mb-4">Private Dining</p>
+            <h2 className="text-white text-4xl md:text-5xl font-normal mb-6 leading-tight">
+              Geisha Room
             </h2>
             <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="h-px w-12 bg-[#b8960c] opacity-50" />
-              <div className="w-1.5 h-1.5 rounded-full bg-[#b8960c]" />
-              <div className="h-px w-12 bg-[#b8960c] opacity-50" />
+              <div className="h-px w-24 bg-accent opacity-50" />
+              <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+              <div className="h-px w-24 bg-accent opacity-50" />
             </div>
-            <p
-              className="text-white/70 text-sm leading-relaxed"
-              style={{ fontFamily: "Georgia, serif" }}
-            >
-              {description}
-            </p>
-            <button
-              className="mt-8 px-8 py-3 border border-[#b8960c] text-[#b8960c] text-xs tracking-[0.3em] uppercase hover:bg-[#b8960c] hover:text-black transition-all duration-500 pointer-events-auto"
-              style={{ fontFamily: "Georgia, serif" }}
-            >
+            <p className="text-white/70 text-lg leading-9">{description}</p>
+            <button className="cursor-pointer mt-8 px-8 py-3 border border-accent text-accent text-xs tracking-[0.3em] uppercase hover:bg-accent hover:text-black transition-all duration-500 pointer-events-auto">
               Reservierung anfragen
             </button>
           </div>
