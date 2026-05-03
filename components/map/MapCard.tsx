@@ -7,6 +7,10 @@ import MapSvg from "./map.svg";
 import "./map.css";
 
 const mapInfo = {
+  pin: {
+    title: "Zenzakan",
+    text: "Der Haupteingang befindet sich im Hinterhof",
+  },
   sbahn: {
     title: "S-Bahn Taunusanlage",
     text: "Schnelle Verbindung zur Innenstadt und Hauptwache.",
@@ -96,6 +100,7 @@ const mapInfo = {
 type MapKey = keyof typeof mapInfo;
 
 function normalizeSvgId(id: string): MapKey | null {
+  if (id.endsWith("pin")) return "pin";
   if (id.endsWith("sbahn")) return "sbahn";
   if (id.endsWith("alteOper")) return "alteOper";
   if (id.endsWith("deutscheBank")) return "deutscheBank";
