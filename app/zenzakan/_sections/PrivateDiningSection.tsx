@@ -1,5 +1,6 @@
 import Title from "../_components/Title";
 import { getDictionary, hasLocale } from "../dictionaries";
+import PlanSvg from "@/public/zenzakan/images/plan.svg";
 
 const PrivateDiningSection = async ({ lang }: { lang: string }) => {
   const locale = hasLocale(lang) ? lang : "de";
@@ -11,6 +12,9 @@ const PrivateDiningSection = async ({ lang }: { lang: string }) => {
       <div className="mg-container">
         <div className="px-4 lg:w-[40%] mx-auto pt-50">
           <p className="text-foreground text-lg leading-9">{dict.privateDining.description}</p>
+        </div>
+        <div>
+          <PlanSvg className="w-full h-auto mt-16" />
         </div>
       </div>
     </section>

@@ -31,6 +31,7 @@
 }
 #map_svg__pin:hover {
   transform: scale(1.2);
+  fill: red;
 }
 
 /* Stations */
@@ -46,7 +47,7 @@
 }
 #map_svg__sbahn:hover,
 #map_svg__ubahn:hover {
-  transform: scale(1.5);
+  transform: scale(2.5);
 }
 
 #map_svg__sbahn:hover #map_svg__sbahn-bg {

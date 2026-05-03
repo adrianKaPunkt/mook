@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Open_Sans, Manrope } from "next/font/google";
 import "./zenzakan.css";
 import Navbar from "./_components/Navbar";
@@ -16,6 +17,10 @@ const body = Manrope({
   subsets: ["latin"],
   variable: "--font-body",
 });
+
+export const metadata: Metadata = {
+  title: "Zenzakan",
+};
 
 export default async function ZenzakanLayout({ children }: { children: React.ReactNode }) {
   const cookieStore = await cookies();
