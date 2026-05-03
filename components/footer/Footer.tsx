@@ -22,6 +22,9 @@ const Footer = ({ location, dict, lang = "de" }: FooterProps) => {
         <div className="text-center md:text-left">
           <h2 className="text-2xl font-heading uppercase tracking-tight">Mook Group</h2>
           <p className="mt-8 text-lg opacity-80">{f?.voucher ?? "Gutschein"}</p>
+          <a href="https://form.mook-group.de/" className="footerNav mt-4 text-lg opacity-80 block">
+            {f?.invoiceRequests ?? "Rechnungsanfragen"}
+          </a>
           <p className="mt-4 text-lg opacity-80">{f?.events ?? "Veranstaltungen"}</p>
           <a href="https://www.mook-group.de/presse/" className="footerNav mt-4 block">
             {f?.press ?? "Presse"}

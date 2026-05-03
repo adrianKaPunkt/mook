@@ -180,6 +180,20 @@
   stroke-width: 12px;
 }
 
+#map_svg__oberlindau {
+  transition: stroke-width 0.4s ease;
+}
+#map_svg__oberlindau:hover {
+  stroke-width: 25px;
+}
+
+#map_svg__leerbachstr {
+  transition: stroke-width 0.4s ease;
+}
+#map_svg__leerbachstr:hover {
+  stroke-width: 25px;
+}
+
 @keyframes map-draw {
   to {
     stroke-dashoffset: 0;

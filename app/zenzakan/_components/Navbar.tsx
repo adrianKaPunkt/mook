@@ -52,13 +52,6 @@ export default function Navbar({ lang }: { lang: string }) {
 
         <div className="hidden md:flex items-center gap-4">
           <LocaleSwitcher lang={lang} />
-          <a
-            href="#reservation"
-            onClick={scrollToSection}
-            className="font-body inline-flex items-center border border-primary bg-primary px-6 py-2.5 text-xs uppercase tracking-[0.2em] text-white transition hover:border-[#c1121f] hover:bg-[#c1121f]"
-          >
-            {lang === "en" ? "Reserve" : "Reservieren"}
-          </a>
         </div>
 
         <button

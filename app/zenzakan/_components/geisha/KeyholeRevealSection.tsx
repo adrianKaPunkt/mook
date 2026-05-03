@@ -21,9 +21,9 @@ export function KeyholeRevealSection({ description }: Props) {
   const t = useTransform(scrollYProgress, [0, 0.4, 0.6, 1.0], [0, 1, 1, 0]);
 
   const scale = useTransform(t, [0, 1], [0.65, 120]);
-  const redOpacity = useTransform(t, [0.1, 0.3], [1, 0]);
+  const redOpacity = useTransform(t, [0.05, 0.15], [1, 0]);
   const maskOpacity = useTransform(t, [0.44, 0.78], [1, 0]);
-  const roomOpacity = useTransform(t, [0.4, 0.7], [0, 1]);
+  const roomOpacity = useTransform(t, [0.15, 0.7], [0, 1]);
   const textOpacity = useTransform(t, [0.93, 0.99], [0, 1]);
 
   return (
@@ -38,10 +38,10 @@ export function KeyholeRevealSection({ description }: Props) {
         {/* Rotes Licht hinter dem Schloss */}
         <motion.div style={{ scale, opacity: maskOpacity }} className="absolute z-10 h-130 w-130">
           <motion.div
-            className="absolute left-1/2 top-1/2 h-45 w-32 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-t-full bg-red-800"
+            className="absolute left-1/2 top-1/2 h-45 w-32 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-t-full bg-red-900/50"
             style={{ opacity: redOpacity }}
           >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(220,50,50,0.8),rgba(60,0,0,0.95)_75%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(220,50,50,0.2),rgba(60,0,0,0.3)_75%)]" />
           </motion.div>
         </motion.div>
 
