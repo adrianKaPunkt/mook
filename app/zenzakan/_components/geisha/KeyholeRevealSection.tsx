@@ -21,7 +21,7 @@ export function KeyholeRevealSection({ description }: Props) {
   const t = useTransform(scrollYProgress, [0, 0.4, 0.6, 1.0], [0, 1, 1, 0]);
 
   const scale = useTransform(t, [0, 1], [0.65, 120]);
-  const redOpacity = useTransform(t, [0.1, 0.4], [1, 0]);
+  const redOpacity = useTransform(t, [0.1, 0.3], [1, 0]);
   const maskOpacity = useTransform(t, [0.44, 0.78], [1, 0]);
   const roomOpacity = useTransform(t, [0.4, 0.7], [0, 1]);
   const textOpacity = useTransform(t, [0.93, 0.99], [0, 1]);
@@ -32,7 +32,7 @@ export function KeyholeRevealSection({ description }: Props) {
         {/* Geisha Room – blendet ein wenn Maske verschwindet */}
         <motion.div className="absolute inset-0 z-0 opacity-0" style={{ opacity: roomOpacity }}>
           <Image src="/zenzakan/images/geisha-room.jpg" alt="" fill className="object-cover" />
-          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 bg-black/10" />
         </motion.div>
 
         {/* Rotes Licht hinter dem Schloss */}

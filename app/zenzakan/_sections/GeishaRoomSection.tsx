@@ -11,7 +11,7 @@ const GeishaRoomSection = async ({ lang }: { lang: string }) => {
     <section id="geisha-room" className="bg-zinc-950">
       <div className="relative py-16">
         <Title symbol="geisha" title={dict.geisha.title} />
-        <div className="absolute left-1/2 -translate-x-1/2 top-55">
+        <div className="hidden lg:block absolute left-1/2 -translate-x-1/2 top-55">
           <Geisha />
         </div>
       </div>

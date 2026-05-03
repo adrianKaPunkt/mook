@@ -105,7 +105,7 @@ const Footer = ({ location, dict, lang = "de" }: FooterProps) => {
         </div>
       </div>
       <FooterLogos />
-      <div className="py-8 text-center text-sm opacity-70">
+      <div className="py-8 text-center text-xs opacity-70">
         © Copyright {new Date().getFullYear()} by Mook Group.{" "}
         {f?.allRightsReserved ?? "All rights reserved."}
       </div>

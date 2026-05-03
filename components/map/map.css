@@ -6,6 +6,17 @@
   animation: map-draw 5.8s ease forwards;
 }
 
+/* Green */
+#map_svg__green {
+  cursor: pointer;
+  opacity: 0.2;
+}
+
+#map_svg__green:hover {
+  opacity: 0.7;
+}
+
+/* Pin */
 #map_svg__pin {
   cursor: pointer;
   opacity: 0;
@@ -15,11 +26,9 @@
     pin-in 0.5s ease 2.5s forwards,
     marker-pulse 5s ease 3.1s infinite;
 }
-
 #map_svg__pin {
   transition: transform 0.2s ease;
 }
-
 #map_svg__pin:hover {
   transform: scale(1.2);
 }
@@ -140,6 +149,7 @@
 }
 #map_svg__opernplatz:hover {
   stroke-width: 30px;
+  opacity: 1;
 }
 
 #map_svg__fressgasse {
