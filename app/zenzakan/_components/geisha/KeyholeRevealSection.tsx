@@ -21,9 +21,9 @@ export function KeyholeRevealSection({ description }: Props) {
   const t = useTransform(scrollYProgress, [0, 0.4, 0.6, 1.0], [0, 1, 1, 0]);
 
   const scale = useTransform(t, [0, 1], [0.65, 120]);
-  const redOpacity = useTransform(t, [0.1, 0.9], [1, 0]);
+  const redOpacity = useTransform(t, [0.1, 0.4], [1, 0]);
   const maskOpacity = useTransform(t, [0.44, 0.78], [1, 0]);
-  const roomOpacity = useTransform(t, [0.6, 0.9], [0, 1]);
+  const roomOpacity = useTransform(t, [0.4, 0.7], [0, 1]);
   const textOpacity = useTransform(t, [0.93, 0.99], [0, 1]);
 
   return (

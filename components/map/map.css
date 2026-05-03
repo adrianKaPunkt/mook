@@ -6,6 +6,10 @@
   animation: map-draw 5.8s ease forwards;
 }
 
+#map_svg__pin {
+  animation: marker-pulse 2s ease infinite;
+}
+
 /* Stations */
 #map_svg__sbahn,
 #map_svg__ubahn {
@@ -175,6 +179,6 @@
   }
 
   50% {
-    filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.55));
+    filter: drop-shadow(0 0 12px rgba(180, 0, 0, 0.7));
   }
 }
