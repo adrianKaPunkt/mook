@@ -17,6 +17,7 @@ const ContactSection = async ({ lang }: { lang: string }) => {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-0">
           <MapCard />
           {/* <Valet dict={dict.contact} /> */}
+          <div>{/* FORM */}</div>
         </div>
       </div>
     </section>

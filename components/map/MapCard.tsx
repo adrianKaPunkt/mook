@@ -31,6 +31,7 @@ export function MapCard() {
         )}
       </div>
       <div
+        data-active={locked ? active : undefined}
         className="relative block aspect-[4/3] overflow-hidden"
         onPointerMove={(event) => {
           if (locked) return;

@@ -12,7 +12,8 @@
   opacity: 0.2;
 }
 
-#map_svg__green:hover {
+#map_svg__green:hover,
+[data-active="green"] #map_svg__green {
   opacity: 0.7;
 }
 
@@ -29,7 +30,8 @@
 #map_svg__pin {
   transition: transform 0.2s ease;
 }
-#map_svg__pin:hover {
+#map_svg__pin:hover,
+[data-active="pin"] #map_svg__pin {
   transform: scale(1.2);
   fill: red;
 }
@@ -46,15 +48,19 @@
     filter 0.3s ease;
 }
 #map_svg__sbahn:hover,
-#map_svg__ubahn:hover {
+[data-active="sbahn"] #map_svg__sbahn,
+#map_svg__ubahn:hover,
+[data-active="ubahn"] #map_svg__ubahn {
   transform: scale(2.5);
 }
 
-#map_svg__sbahn:hover #map_svg__sbahn-bg {
+#map_svg__sbahn:hover #map_svg__sbahn-bg,
+[data-active="sbahn"] #map_svg__sbahn-bg {
   fill: #008d4f !important;
 }
 
-#map_svg__ubahn:hover #map_svg__ubahn-bg {
+#map_svg__ubahn:hover #map_svg__ubahn-bg,
+[data-active="ubahn"] #map_svg__ubahn-bg {
   fill: #006db4 !important;
 }
 
@@ -70,7 +76,9 @@
 }
 
 #map_svg__alteOper:hover,
-#map_svg__deutscheBank:hover {
+[data-active="alteOper"] #map_svg__alteOper,
+#map_svg__deutscheBank:hover,
+[data-active="deutscheBank"] #map_svg__deutscheBank {
   transform: scale(1.1);
 }
 
@@ -87,28 +95,32 @@
 #map_svg__taunusanlage {
   transition: stroke-width 0.4s ease;
 }
-#map_svg__taunusanlage:hover {
+#map_svg__taunusanlage:hover,
+[data-active="taunusanlage"] #map_svg__taunusanlage {
   stroke-width: 70px;
 }
 
 #map_svg__neueMainzer {
   transition: stroke-width 0.4s ease;
 }
-#map_svg__neueMainzer:hover {
+#map_svg__neueMainzer:hover,
+[data-active="neueMainzer"] #map_svg__neueMainzer {
   stroke-width: 55px;
 }
 
 #map_svg__bockenheimerLandstr {
   transition: stroke-width 0.4s ease;
 }
-#map_svg__bockenheimerLandstr:hover {
+#map_svg__bockenheimerLandstr:hover,
+[data-active="bockenheimerLandstr"] #map_svg__bockenheimerLandstr {
   stroke-width: 45px;
 }
 
 #map_svg__bockenheimerAnlage {
   transition: stroke-width 0.4s ease;
 }
-#map_svg__bockenheimerAnlage:hover {
+#map_svg__bockenheimerAnlage:hover,
+[data-active="bockenheimerAnlage"] #map_svg__bockenheimerAnlage {
   stroke-width: 45px;
 }
 
@@ -120,35 +132,40 @@
 #map_svg__kettenhofweg {
   transition: stroke-width 0.4s ease;
 }
-#map_svg__kettenhofweg:hover {
+#map_svg__kettenhofweg:hover,
+[data-active="kettenhofweg"] #map_svg__kettenhofweg {
   stroke-width: 30px;
 }
 
 #map_svg__niedenau {
   transition: stroke-width 0.4s ease;
 }
-#map_svg__niedenau:hover {
+#map_svg__niedenau:hover,
+[data-active="niedenau"] #map_svg__niedenau {
   stroke-width: 30px;
 }
 
 #map_svg__guiollettstr {
   transition: stroke-width 0.4s ease;
 }
-#map_svg__guiollettstr:hover {
+#map_svg__guiollettstr:hover,
+[data-active="guiollettstr"] #map_svg__guiollettstr {
   stroke-width: 30px;
 }
 
 #map_svg__klueberstr {
   transition: stroke-width 0.4s ease;
 }
-#map_svg__klueberstr:hover {
+#map_svg__klueberstr:hover,
+[data-active="klueberstr"] #map_svg__klueberstr {
   stroke-width: 10px;
 }
 
 #map_svg__opernplatz {
   transition: stroke-width 0.4s ease;
 }
-#map_svg__opernplatz:hover {
+#map_svg__opernplatz:hover,
+[data-active="opernplatz"] #map_svg__opernplatz {
   stroke-width: 30px;
   opacity: 1;
 }
@@ -156,42 +173,56 @@
 #map_svg__fressgasse {
   transition: stroke-width 0.4s ease;
 }
-#map_svg__fressgasse:hover {
+#map_svg__fressgasse:hover,
+[data-active="fressgasse"] #map_svg__fressgasse {
   stroke-width: 30px;
 }
 
 #map_svg__goethestr {
   transition: stroke-width 0.4s ease;
 }
-#map_svg__goethestr:hover {
+#map_svg__goethestr:hover,
+[data-active="goethestr"] #map_svg__goethestr {
   stroke-width: 25px;
 }
 
 #map_svg__junghofstr {
   transition: stroke-width 0.4s ease;
 }
-#map_svg__junghofstr:hover {
+#map_svg__junghofstr:hover,
+[data-active="junghofstr"] #map_svg__junghofstr {
   stroke-width: 30px;
 }
 
 #map_svg__kleineHochstr {
   transition: stroke-width 0.4s ease;
 }
-#map_svg__kleineHochstr:hover {
+#map_svg__kleineHochstr:hover,
+[data-active="kleineHochstr"] #map_svg__kleineHochstr {
   stroke-width: 12px;
+}
+
+#map_svg__kaiserhofstr {
+  transition: stroke-width 0.4s ease;
+}
+#map_svg__kaiserhofstr:hover,
+[data-active="kaiserhofstr"] #map_svg__kaiserhofstr {
+  stroke-width: 13px;
 }
 
 #map_svg__oberlindau {
   transition: stroke-width 0.4s ease;
 }
-#map_svg__oberlindau:hover {
+#map_svg__oberlindau:hover,
+[data-active="oberlindau"] #map_svg__oberlindau {
   stroke-width: 25px;
 }
 
 #map_svg__leerbachstr {
   transition: stroke-width 0.4s ease;
 }
-#map_svg__leerbachstr:hover {
+#map_svg__leerbachstr:hover,
+[data-active="leerbachstr"] #map_svg__leerbachstr {
   stroke-width: 25px;
 }
 
